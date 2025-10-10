@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="left">
+    <app-sidebar></app-sidebar>
+    <div class="logo">
+      <img src="icons/Logo.png" alt="Logo" />
+      <img src="icons/Glyvia.png" alt="Logo" />
+    </div>
+  </div>
+
+  <button class="user-btn" (click)="goToProfile()">       <!-- Trocar por <ap-profile> -->
+    <img src="icons/Default_Profile.png" alt="Usuário" /> <!-- Remover No Futuro -->
+  </button>
+</header>
+
+<!-- Sidebar aparece quando menuOpen for true -->
+<app-sidebar *ngIf="SidebarOpen"></app-sidebar>

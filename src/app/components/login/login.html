@@ -1,0 +1,27 @@
+<div class="login-container">
+  <div class="login-form">
+    <img class="avatar" src="icons/Glyvia_Logo.png" alt="Logo da Glyvia" />
+    <button class="google-btn">Sign in with Google</button>
+    <div class="divider">
+      <span>ou</span>
+    </div>
+    <form (ngSubmit)="navigateDashboard()">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Digite seu email" />
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" placeholder="Digite sua senha" />
+      <button type="submit" class="login-btn">Entrar</button>
+      <button type="button" class="forgot-btn" (click)="navigateForgot()">Esqueci minha senha</button>
+    </form>
+
+    <p class="signup" (click)="navigateCadastro()">
+      Não tem uma conta? Cadastre-se
+    </p>
+  </div>
+
+  <div class="login-image">
+    <h1>Glyvia</h1>
+    <p>Controle inteligente. Vida equilibrada.</p>
+    <img src="icons/login-image.png" alt="Login illustration" />
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="dashboard-container">
+  <div class="header">
+    <h2>Dashboard</h2>
+  </div>
+
+  <div class="cards">
+    <div class="card blue">
+      <h4>Última glicemia</h4>
+      <p class="value">{{ ultimaGlicemia.valor }} mg/dL</p>
+      <small>{{ ultimaGlicemia.horario }}</small>
+    </div>
+
+    <div class="card gray">
+      <h4>Média diária</h4>
+      <p class="value">{{ mediaDiaria }} mg/dL</p>
+    </div>
+
+    <div class="card orange">
+      <h4>Próxima insulina</h4>
+      <p class="value">{{ proximaInsulina }}</p>
+      <small>UTC-3 (Horário de Brasília)</small>
+    </div>
+
+    <div class="card green">
+      <h4>Status rápido</h4>
+      <p>
+        <span class="status-icon">👍</span>
+        Está dentro da faixa alvo hoje
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box blue">
+      <h4>Alertas</h4>
+      <ul>
+        <li *ngFor="let alerta of alertas">{{ alerta }}</li>
+      </ul>
+    </div>
+
+    <div class="box light-blue">
+      <h4>Marcações do Dia da Glicemia</h4>
+      <div class="grafico-placeholder">
+        (Gráfico aqui)
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-box">
+    <p>Você manteve {{ porcentagemIdeal }}% do tempo em faixa ideal nesta semana</p>
+    <div class="buttons">
+      <button>➕ Adicionar glicemia</button>
+      <button>🍽️ Registrar refeição</button>
+    </div>
+  </div>
+</div>

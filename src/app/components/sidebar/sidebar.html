@@ -1,0 +1,16 @@
+<header class="header">
+  <button class="menu-btn" (click)="toggleSidebar()"> ☰ </button>
+</header>
+<nav class="sidebar" [class.open]="isSidebarOpen">
+  <ul>
+    <li (click)="navigateDashboard()"> Dashboard</li>
+    <li> Adicionar Glicemia</li>
+    <li> Contar Carboidratos</li>
+    <li> Histórico</li>
+    <li> Relatórios e Gráficos</li>
+    <li> Lembretes</li>
+    <li> Alertas</li>
+  </ul>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <span class="version">v1.0</span>
+</nav>

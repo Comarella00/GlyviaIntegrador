@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+app-header {
+  flex: 0 0 auto;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 200px;
+}
+
+.BoxIntroducao {
+  background-color: #7CB0EC;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  border-radius: 4px;
+  width: 480px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.BoxIntroducao .Mascote {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.BoxIntroducao h1,
+.BoxIntroducao h2 {
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4em;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.BoxIntroducao h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.next-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  margin-left: 15px;
+  transition: transform 0.2s ease;
+}
+
+.next-btn:hover {
+  transform: scale(1.2);
+}

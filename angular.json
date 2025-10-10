@@ -19,6 +19,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/icons",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -88,5 +89,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

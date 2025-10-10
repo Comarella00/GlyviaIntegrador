@@ -1,0 +1,47 @@
+.header {
+  background-color: #1f5da6;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 40px;
+}
+
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 74px; /* empurra a sidebar para baixo do header */
+  left: -250px;
+  width: 250px;
+  height: calc(100% - 60px);
+  background-color: #1f5da6;
+}
+
+
+.sidebar.open {
+  left: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.version {
+  padding: 10px;
+  display: flex;
+  margin-left: 90px;
+}
