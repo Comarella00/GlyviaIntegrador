@@ -13,6 +13,9 @@ import {FormsModule} from '@angular/forms';
 
 export class Login {
   constructor(private router: Router) {}
+
+  showPassword: boolean = false;
+
   navigateCadastro() {
     this.router.navigate(['/cadastro']);
   }
@@ -25,4 +28,7 @@ export class Login {
     this.router.navigate(['/forgot']);
   }
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 }

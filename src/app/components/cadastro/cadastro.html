@@ -1,29 +1,48 @@
 <body>
-  <div class="cadastro-container">
-    <div class="background">
-      <img src="icons/login-image.png" alt="Cadastro background" />
-    </div>
-
-    <div class="cadastro-form">
-      <form>
-        <img class="avatar" src="icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
-
-        <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Digite seu email" />
-
-        <label for="senha">Senha</label>
-        <input id="senha" type="password" placeholder="Digite sua senha" />
-
-        <label for="confirma">Confirme a senha</label>
-        <input id="confirma" type="password" placeholder="Confirme sua senha" />
-
-        <div class="buttons">
-          <button type="button" class="back-btn" (click)="goBack()">
-            Voltar
-          </button>
-          <button type="submit" class="create-btn" (click)=navigatePerguntas()>Criar</button>
-        </div>
-      </form>
-    </div>
+<div class="cadastroContainer">
+  <div class="background">
+    <img src="icons/login-image.png" alt="Cadastro background" />
   </div>
+
+  <div class="cadastroForm">
+    <form>
+      <img class="avatar" src="icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="Digite seu email" />
+
+      <label for="senha">Senha</label>
+      <div class="passwordContainer">
+        <input
+          class="inputField"
+          id="senha"
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Digite sua senha"
+        />
+        <button type="button" class="eyeBtn" (click)="togglePassword()">
+          <img [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'" alt="Mostrar/Ocultar senha" />
+        </button>
+      </div>
+
+
+      <div class="passwordContainer">
+        <input
+          class="inputField"
+          id="senha"
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Confirme sua senha"
+        />
+        <button type="button" class="eyeBtn" (click)="togglePassword()">
+          <img [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'" alt="Mostrar/Ocultar senha" />
+        </button>
+      </div>
+
+
+      <div class="buttons">
+        <button type="button" class="backBtn" (click)="goBack()">Voltar</button>
+        <button type="submit" class="createBtn" (click)="navigatePerguntas()">Criar</button>
+      </div>
+    </form>
+  </div>
+</div>
 </body>

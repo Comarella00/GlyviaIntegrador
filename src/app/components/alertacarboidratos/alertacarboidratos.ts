@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
-import {Contarcarboidratos} from '../contarcarboidratos/contarcarboidratos';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-alertacarboidratos',
-  imports: [
-    Contarcarboidratos
-  ],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './alertacarboidratos.html',
-  styleUrl: './alertacarboidratos.css'
+  styleUrls: ['./alertacarboidratos.css']
 })
 export class Alertacarboidratos {
+  show = false;
+  mensagem = "Aviso";
 
+  abrir() {
+    this.show = true;
+  }
+
+  fechar(){
+    this.show = false;
+  }
 }

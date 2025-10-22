@@ -8,43 +8,74 @@ body {
   flex-direction: column;
 }
 
-.Mascote {
+.mascote {
   width: 50px;
   height: auto;
   display: block;
 }
 
-.main-content {
+.mainContent {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
-.form-box {
+.formBox {
   background-color: #77b5f7;
   color: white;
-  width: 400px;
-  padding: 30px;
+  width: 350px;
+  padding: 40px;
   border-radius: 8px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: center;
+  margin: 20px auto;
 }
 
-.form-header {
+.formHeader {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-bottom: 10px;
+  padding: 10px;
   align-self: center;
+  font-weight: bold;
 }
 
-.form-header h1 {
+.mediumBox {
+  width: 100px;
+}
+
+.largeBox {
+  width: 250px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fieldGroup input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.formHeader h1 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
   font-style: italic;
   margin: 0;
 }
@@ -64,20 +95,20 @@ form input {
   font-size: 14px;
 }
 
-.form-actions {
+.formActions {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.back-btn {
+.backBtn {
   background: transparent;
   border: none;
   font-size: 20px;
   cursor: pointer;
 }
 
-.ok-btn {
+.okBtn {
   background-color: #004aad;
   color: white;
   border: none;

@@ -2,43 +2,70 @@
   <app-header></app-header>
 </header>
 
-<main class="main-content">
-  <div class="form-box">
-    <div class="form-header">
-      <img class="Mascote" src="icons/Mascote.png" alt="Mascote" />
+<main class="mainContent">
+  <div class="formBox">
+    <div class="formHeader">
+      <img class="mascote" src="icons/Mascote.png" alt="Mascote" />
       <h1>Personalizando seu Glyvia</h1>
     </div>
 
     <form>
       <label for="nome">Nome</label>
-      <input type="text" id="nome" />
+      <div class="largeBox">
+        <input type="text" id="nome" />
+      </div>
 
-      <label for="genero">Gênero</label>
-      <input type="text" id="genero" />
+      <div class="row">
+        <div class="fieldGroup">
+          <label for="genero">Gênero</label>
+          <div class="mediumBox">
+            <input type="text" id="genero" />
+          </div>
+        </div>
 
-      <label for="altura">Altura</label>
-      <input type="number" id="altura" />
+        <div class="fieldGroup">
+          <label for="altura">Altura</label>
+          <div class="mediumBox">
+            <input type="number" id="altura" />
+          </div>
+        </div>
 
-      <label for="peso">Peso atual</label>
-      <input type="number" id="peso" />
+        <div class="fieldGroup">
+          <label for="peso">Peso Atual</label>
+          <div class="mediumBox">
+            <input type="number" id="peso" />
+          </div>
+        </div>
+      </div>
 
-      <label for="insulina">Tipo de insulina</label>
-      <input type="text" id="insulina" />
+      <label for="insulina">Tipo de Insulina</label>
+      <div class="largeBox">
+        <input type="text" id="insulina" />
+      </div>
 
       <label for="aplicacao">Via de Aplicação</label>
-      <input type="text" id="aplicacao" />
+      <div class="largeBox">
+        <input type="text" id="aplicacao" />
+      </div>
 
       <label for="nascimento">Data de Nascimento</label>
-      <input type="date" id="nascimento" />
+      <div class="mediumBox">
+        <input type="date" id="nascimento" />
+      </div>
 
-      <label for="ICR">ICR - Relação Insulina/Carboidrato</label>
-      <input type="text" id="ICR" />
+      <label for="icr">ICR - Relação Insulina/Carboidrato</label>
+      <div class="largeBox">
+        <input type="text" id="icr" />
+      </div>
 
       <label for="metaGlicemica">Meta Glicemia</label>
-      <input type="text" id="metaGlicemia" />
-      <div class="form-actions">
-        <button type="button" class="back-btn" (click)="navigateGoBack()">←</button>
-        <button type="submit" class="ok-btn" (click)="navigateDashboard()">Ok</button>
+      <div class="mediumBox">
+        <input type="text" id="metaGlicemica" />
+      </div>
+
+      <div class="formActions">
+        <button type="button" class="backBtn" (click)="navigateGoBack()">←</button>
+        <button type="submit" class="okBtn" (click)="navigateDashboard()">Ok</button>
       </div>
     </form>
   </div>

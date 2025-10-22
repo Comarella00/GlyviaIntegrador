@@ -4,7 +4,7 @@ body {
   margin: -10px;
 }
 
-.profile-container {
+.profileContainer {
   background-color: #78aee9;
   min-height: 100vh;
   padding: 30px;
@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.user-info {
+.userInfo {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -28,6 +28,7 @@ body {
   margin-right: 15px;
   position: relative;
 }
+
 .photo::before {
   content: "📷";
   position: absolute;
@@ -44,13 +45,13 @@ body {
   gap: 10px;
 }
 
-.user-name {
+.userName {
   background-color: #e5e8eb;
   padding: 10px;
   border-radius: 6px;
 }
 
-.user-desc {
+.userDesc {
   background-color: #e5e8eb;
   padding: 10px;
   border-radius: 6px;
@@ -64,7 +65,7 @@ body {
   margin-bottom: 10px;
 }
 
-.section-header {
+.sectionHeader {
   background-color: #3b7ec2;
   color: white;
   cursor: pointer;
@@ -75,11 +76,11 @@ body {
   padding: 3%;
 }
 
-.section-header:hover {
+.sectionHeader:hover {
   background-color: #468fd3;
 }
 
-.section-content {
+.sectionContent {
   background-color: #bcd2ef;
   padding: 15px 20px;
 }
@@ -103,44 +104,7 @@ body {
   margin-bottom: 5px;
 }
 
-.aboutUs {
-  display: flex;
-  align-items: flex-start;
-  background-color: #d8e3f0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-.aboutUs .icon{
-  font-size: 22px;
-  margin-right: 10px;
-}
-
-.aboutUs strong {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.preferencias {
-  display: flex;
-  align-items: flex-start;
-  background-color: #d8e3f0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-.preferencias .icon {
-  font-size: 22px;
-  margin-right: 10px;
-}
-.preferencias strong {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.close-btn {
+.closeBtn {
   background: none;
   border: none;
   color: #f47920;
@@ -149,7 +113,7 @@ body {
   margin-left: auto;
 }
 
-.logout-btn {
+.logoutBtn {
   background-color: #f47920;
   color: white;
   border: none;
@@ -161,6 +125,6 @@ body {
   cursor: pointer;
 }
 
-.logout-btn:hover {
+.logoutBtn:hover {
   background-color: #f36500;
 }

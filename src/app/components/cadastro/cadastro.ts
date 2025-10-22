@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastro.css']
 })
 export class Cadastro {
-
   constructor(private router: Router) {}
+
+  showPassword: boolean = false;
 
   goBack() {
     this.router.navigate(['/']);
@@ -16,5 +17,9 @@ export class Cadastro {
 
   navigatePerguntas() {
     this.router.navigate(['/bemvindo']);
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }

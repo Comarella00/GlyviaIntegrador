@@ -1,13 +1,7 @@
-<app-contarcarboidratos></app-contarcarboidratos>
-
-<div *ngIf="mostrarComponente">
-  <body>
-    <div class="container">
-      <img src="icons/warning.png" alt="Alerta">
-        <div class="title">
-          <h3>Atenção</h3>
-        </div>
-      <p>Estes valores são apenas para a correção do alimento!</p>
-    </div>
-  </body>
+<div class="overlay" *ngIf="show">
+  <div class="modal">
+    <h3>Atenção!</h3>
+    <p>{{ mensagem }}</p>
+    <button (click)="fechar()">Fechar</button>
+  </div>
 </div>

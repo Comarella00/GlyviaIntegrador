@@ -5,14 +5,15 @@
     <h2>Contar Carboidratos</h2>
   </div>
 
-  <!-- Mostra inicialmente o CarboidratosComponent -->
-  <!-- <ng-container *ngIf="!showResumo">-->
-    <app-carboidratos><!-- (fotoProcessada)="onFotoProcessada($event)"--></app-carboidratos>
-  <!-- </ng-container>-->
-    <app-resumorefeicao></app-resumorefeicao>
-  <!-- Mostra o resumo quando a foto for processada -->
-  <ng-container *ngIf="showResumo">
-    <!--<app-resumo-refeicao [carboData]="carboData"></app-resumo-refeicao>-->>
-  </ng-container>
+  <!--Card de enviar Foto e Dicas -->
+  <app-carboidratos (fotoProcessada)="onFotoProcessada($event)"></app-carboidratos>
 
+  <div class="main-container" *ngIf="fotoProcessada">
+    <app-resumorefeicao [foto]="fotoProcessada"></app-resumorefeicao>
+
+
+    <!-- Botão de Alerta que não está funcionando atualmente -->
+    <!-- <button (click)="alerta.abrir()" class="btn-aviso">Ver aviso</button> -->
+    <!-- <app-alertacarboidratos #alerta [mensagem]="'Estes valores são apenas para correção!'"></app-alertacarboidratos> -->
+  </div>
 </div>

@@ -1,71 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
 
 body {
+  margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: whitesmoke;
-  height: 90vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f7fa;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: -10px;
 }
 
 app-header {
   flex: 0 0 auto;
 }
 
-.main-content {
+.mainContent {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 200px;
+  align-items: center;
 }
 
-.BoxIntroducao {
-  background-color: #7CB0EC;
+.boxIntroducao {
+  background-color: #7cb0ec;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 40px 60px;
-  border-radius: 4px;
+  border-radius: 10px;
   width: 480px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.BoxIntroducao .Mascote {
-  width: 50px;
+.boxIntroducao .mascote {
+  width: 60px;
   height: auto;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
-.BoxIntroducao h1,
-.BoxIntroducao h2 {
+.boxIntroducao .texto {
+  text-align: center;
+  flex: 1;
+}
+
+.boxIntroducao h1,
+.boxIntroducao h2 {
   margin: 0;
   font-weight: normal;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.4em;
   font-style: italic;
-  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4em;
 }
 
-.BoxIntroducao h1 {
-  font-size: 16px;
-  margin-bottom: 5px;
+.boxIntroducao h1 {
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
-.next-btn {
+.boxIntroducao h2 {
+  font-size: 14px;
+}
+
+.nextBtn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
   color: white;
-  margin-left: 15px;
+  margin-left: 20px;
   transition: transform 0.2s ease;
 }
 
-.next-btn:hover {
+.nextBtn:hover {
   transform: scale(1.2);
 }
