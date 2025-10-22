@@ -1,43 +1,74 @@
 {
+<<<<<<< HEAD
   "hash": "07cbe828",
   "configHash": "21a12076",
   "lockfileHash": "c0bc328d",
   "browserHash": "ea399861",
+=======
+  "hash": "d57d5491",
+  "configHash": "220d22ef",
+  "lockfileHash": "7a838268",
+  "browserHash": "8edf2d62",
+>>>>>>> 579302b3 (aaaaaaaaaa)
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
+<<<<<<< HEAD
       "fileHash": "6b221c20",
+=======
+      "fileHash": "c6c74203",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
+<<<<<<< HEAD
       "fileHash": "4e5d1ced",
+=======
+      "fileHash": "c0f3adb3",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
+<<<<<<< HEAD
       "fileHash": "35ab6ac2",
+=======
+      "fileHash": "9c9a2c4b",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
+<<<<<<< HEAD
       "fileHash": "8474689b",
+=======
+      "fileHash": "499538a1",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
+<<<<<<< HEAD
       "fileHash": "2101d3b8",
+=======
+      "fileHash": "b2372a84",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": false
     },
     "zone.js": {
       "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
       "file": "zone__js.js",
+<<<<<<< HEAD
       "fileHash": "0cdd6734",
+=======
+      "fileHash": "81c5533d",
+>>>>>>> 579302b3 (aaaaaaaaaa)
       "needsInterop": true
     }
   },
