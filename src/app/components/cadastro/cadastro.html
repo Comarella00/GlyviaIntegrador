@@ -1,25 +1,29 @@
-<div class="cadastro-container">
-  <div class="background">
-    <img src="icons/login-image.png" alt="Cadastro background" />
+<body>
+  <div class="cadastro-container">
+    <div class="background">
+      <img src="icons/login-image.png" alt="Cadastro background" />
+    </div>
+
+    <div class="cadastro-form">
+      <form>
+        <img class="avatar" src="icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Digite seu email" />
+
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="Digite sua senha" />
+
+        <label for="confirma">Confirme a senha</label>
+        <input id="confirma" type="password" placeholder="Confirme sua senha" />
+
+        <div class="buttons">
+          <button type="button" class="back-btn" (click)="goBack()">
+            Voltar
+          </button>
+          <button type="submit" class="create-btn" (click)=navigatePerguntas()>Criar</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <div class="cadastro-form">
-    <form>
-      <label for="email">Email</label>
-      <input id="email" type="email" placeholder="Digite seu email" />
-
-      <label for="senha">Senha</label>
-      <input id="senha" type="password" placeholder="Digite sua senha" />
-
-      <label for="confirma">Confirme a senha</label>
-      <input id="confirma" type="password" placeholder="Confirme sua senha" />
-
-      <div class="buttons">
-        <button type="button" class="back-btn" (click)="goBack()">
-          Voltar
-        </button>
-        <button type="submit" class="create-btn" (click)=navigatePerguntas()>Criar</button>
-      </div>
-    </form>
-  </div>
-</div>
+</body>

@@ -1,0 +1,166 @@
+<app-header></app-header>
+<body>
+  <div class="profile-container">
+    <div class="user-info">
+      <div class="photo"></div>
+      <div class="info">
+        <div class="user-name">NOME DO USUÁRIO</div>
+        <div class="user-desc">
+          Informações que foram colocadas junto ao mascote Glyvia na hora do cadastro
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 1 - NOTIFICAÇÕES -->
+    <div class="section">
+      <div class="section-header" (click)="toggleSection('notificacoes')">
+        <span>NOTIFICAÇÕES</span>
+        <span class="arrow">{{ openSection === 'notificacoes' ? '▾' : '▸' }}</span>
+      </div>
+
+      <div class="section-content" *ngIf="openSection === 'notificacoes'">
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/party-popper.png" alt="Festa">
+          </div>
+          <div>
+            <strong>Resumo da semana</strong>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/sad-face.png" alt="Cara triste">
+          </div>
+          <div>
+            <strong>Ficamos com saudades</strong>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/star.png" alt="Estrela">
+          </div>
+          <div>
+            <strong>Dia de comemorar</strong>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO 2 - DADOS DA CONTA -->
+    <div class="section">
+      <div class="section-header" (click)="toggleSection('conta')">
+        <span>DADOS DA CONTA</span>
+        <span class="arrow">{{ openSection === 'conta' ? '▾' : '▸' }}</span>
+      </div>
+      <div class="section-content" *ngIf="openSection === 'conta'">
+        <p>Informações da conta do usuário.</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 3 - SOBRE NÓS -->
+    <div class="section">
+      <div class="section-header" (click)="toggleSection('sobre')">
+        <span>SOBRE NÓS</span>
+        <span class="arrow">{{ openSection === 'sobre' ? '▾' : '▸' }}</span>
+      </div>
+
+      <div class="section-content" *ngIf="openSection === 'sobre'">
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/info.png" alt="Informação">
+          </div>
+          <div>
+            <strong>Quem somos</strong>
+            <p>
+              Somos uma iniciativa sem fins lucrativos dedicada a tornar o cuidado com a diabetes mais simples e humano.
+              Criamos o Glyvia para ajudar pessoas a acompanharem sua saúde de forma prática, com carinho e acessibilidade.
+              Nosso compromisso é apoiar cada passo da sua jornada, sempre com empatia e cuidado.
+            </p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/customer-service.png" alt="Contato">
+          </div>
+          <div>
+            <strong>Fale conosco</strong>
+            <p>
+              Estamos aqui para você! Se tiver dúvidas, sugestões ou quiser compartilhar sua experiência, fale com a gente!<br>
+              <strong>E-mail:</strong> contato@glyvia.org
+            </p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- BLOCO 4 - PREFERÊNCIAS DO APP -->
+    <div class="section">
+      <div class="section-header" (click)="toggleSection('preferencias')">
+        <span>PREFERÊNCIAS DO APP</span>
+        <span class="arrow">{{ openSection === 'preferencias' ? '▾' : '▸' }}</span>
+      </div>
+
+      <div class="section-content" *ngIf="openSection === 'preferencias'">
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/language.png" alt="Linguagem">
+          </div>
+          <div>
+            <strong>Idioma</strong>
+            <p>Português - Brasil</p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/themes.png" alt="Tema">
+          </div>
+          <div>
+            <strong>Tema</strong>
+            <p>Claro</p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/version.png" alt="Versão">
+          </div>
+          <div>
+            <strong>Versão do App</strong>
+            <p>Última versão: 1.0v</p>
+            <p>Data da última atualização: Indefinido</p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+        <div class="notification">
+          <div class="icon">
+            <img src="icons/code.png" alt="Desenvolvido">
+          </div>
+          <div>
+            <strong>Desenvolvido por</strong>
+            <p>Projeto Glyvia</p>
+          </div>
+          <button class="close-btn">✕</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <button class="logout-btn">SAIR</button>
+  </div>
+</body>

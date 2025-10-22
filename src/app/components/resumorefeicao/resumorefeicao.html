@@ -1,0 +1,36 @@
+<body>
+  <div class="card">
+    <div class="card-header">
+      Resumo da Refeição
+    </div>
+    <div class="card-image">
+      imagem
+    </div>
+    <div class="card-content">
+      <p class="description">Feijoada com arroz branco, couve refogada, farofa e laranja</p>
+      <div class="nutrients">
+        <div class="nutrient">
+          <span class="value">714 kcal</span>
+          <span class="label">Calorias</span>
+        </div>
+        <div class="nutrient">
+          <span class="value">89,0 g</span>
+          <span class="label">Carboidratos</span>
+        </div>
+        <button class="button-insulina">
+          <div class="nutrient correction">
+            <span class="value">8 u</span>
+            <span class="label">Insulina para correção</span>
+          </div>
+        </button>
+        <div class="alert">
+          <img src="icons/warning.png" alt="Alerta" (click)="navigateAlertacarboidratos()">
+        </div>
+      </div>
+      <div class="card-actions">
+        <span>Adicionar ou editar</span>
+        <button class="button-salvar">Salvar dados</button>
+      </div>
+    </div>
+  </div>
+</body>

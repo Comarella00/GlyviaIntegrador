@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="header">
+    <h2>Contar Carboidratos</h2>
+  </div>
+
+  <!-- Mostra inicialmente o CarboidratosComponent -->
+  <!-- <ng-container *ngIf="!showResumo">-->
+    <app-carboidratos><!-- (fotoProcessada)="onFotoProcessada($event)"--></app-carboidratos>
+  <!-- </ng-container>-->
+    <app-resumorefeicao></app-resumorefeicao>
+  <!-- Mostra o resumo quando a foto for processada -->
+  <ng-container *ngIf="showResumo">
+    <!--<app-resumo-refeicao [carboData]="carboData"></app-resumo-refeicao>-->>
+  </ng-container>
+
+</div>

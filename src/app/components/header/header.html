@@ -7,10 +7,7 @@
     </div>
   </div>
 
-  <button class="user-btn" (click)="goToProfile()">       <!-- Trocar por <ap-profile> -->
-    <img src="icons/Default_Profile.png" alt="Usuário" /> <!-- Remover No Futuro -->
+  <button type="button" class="user-btn" (click)="goToProfile()">
+    <img src="icons/Default_Profile.png" alt="Usuário" class="user-icon" />
   </button>
 </header>
-
-<!-- Sidebar aparece quando menuOpen for true -->
-<app-sidebar *ngIf="SidebarOpen"></app-sidebar>

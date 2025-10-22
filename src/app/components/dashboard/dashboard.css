@@ -1,12 +1,24 @@
+body {
+  background-color: #D9D9D9;
+  min-height: 100vh;
+  padding: 0;
+  margin: -10px;
+}
+
 .dashboard-container {
   font-family: Arial, sans-serif;
   padding: 16px;
-  background: #D9D9D9;
+  background: transparent;
 }
 
 .header h2 {
-  margin-bottom: 20px;
-  color: #1f5da6;
+  background-color: #4C7BB2;
+  margin: -10px -15px 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .cards {
@@ -18,7 +30,7 @@
 .card {
   flex: 1;
   min-width: 200px;
-  padding: 16px;
+  padding: 10px;
   border-radius: 10px;
   color: #fff;
 }

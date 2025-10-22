@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.card {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #4285F4;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.card-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.description {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.nutrients {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* espaçamento uniforme */
+  margin-bottom: 15px;
+  gap: 10px; /* espaço extra entre os itens */
+}
+
+.nutrient {
+  text-align: center;
+  min-width: 60px; /* garante que não fiquem colados */
+}
+
+.nutrient .value {
+  font-weight: bold;
+  display: block;
+}
+
+.nutrient.correction {
+  background-color: #F4A261;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.alert {
+  font-weight: bold;
+  color: #D00000;
+  font-size: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #F4A261;
+}
+
+.button-insulina{
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 5px 20px;
+  cursor: pointer;
+  background: none; /* botão "invisível" para manter o flex */
+}
+
+.card-actions button {
+  background-color: #F4A261;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.card-actions button:hover {
+  background-color: #e59450;
+}

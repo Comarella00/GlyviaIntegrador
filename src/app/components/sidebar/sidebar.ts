@@ -17,6 +17,14 @@ export class Sidebar {
   }
 
   navigateDashboard() {
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['/dashboard']);
+  }
+
+  navigateAddglicemia() {
+    this.router.navigate(['/addglicemia']);
+  }
+
+  navigateContarcarboidratos(){
+    this.router.navigate(['/contarcarboidratos']);
   }
 }

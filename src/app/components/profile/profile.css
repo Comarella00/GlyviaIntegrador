@@ -1,0 +1,166 @@
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: -10px;
+}
+
+.profile-container {
+  background-color: #78aee9;
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  margin-right: 15px;
+  position: relative;
+}
+.photo::before {
+  content: "📷";
+  position: absolute;
+  font-size: 28px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #999;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-name {
+  background-color: #e5e8eb;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.user-desc {
+  background-color: #e5e8eb;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.section {
+  width: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.section-header {
+  background-color: #3b7ec2;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3%;
+}
+
+.section-header:hover {
+  background-color: #468fd3;
+}
+
+.section-content {
+  background-color: #bcd2ef;
+  padding: 15px 20px;
+}
+
+.notification {
+  display: flex;
+  align-items: flex-start;
+  background-color: #d8e3f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.notification .icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.notification strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.aboutUs {
+  display: flex;
+  align-items: flex-start;
+  background-color: #d8e3f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.aboutUs .icon{
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.aboutUs strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.preferencias {
+  display: flex;
+  align-items: flex-start;
+  background-color: #d8e3f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.preferencias .icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+.preferencias strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #f47920;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.logout-btn {
+  background-color: #f47920;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #f36500;
+}

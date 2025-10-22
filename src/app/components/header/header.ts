@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
-import { Sidebar } from '../sidebar/sidebar';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {Sidebar} from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [Sidebar],
+  imports: [CommonModule, Sidebar],
   templateUrl: './header.html',
   styleUrls: ['./header.css']
 })
 export class Header {
-  SidebarOpen = false;
-
-  toggleSidebar() {
-      this.SidebarOpen = !this.SidebarOpen;
-    }
+  constructor(private router: Router) {}
 
   goToProfile() {
-    // lógica para ir ao perfil
+    console.log('clicou no botão');
+    this.router.navigate(['/profile']);
   }
 }

@@ -18,16 +18,17 @@
 
 .sidebar {
   position: fixed;
-  top: 74px; /* empurra a sidebar para baixo do header */
+  top: 64px; /* empurra a sidebar para baixo do header */
   left: -250px;
   width: 250px;
   height: calc(100% - 60px);
   background-color: #1f5da6;
+  transition: left 0.3s ease;
 }
 
 
 .sidebar.open {
-  left: 8px;
+  left: 0px;
 }
 
 .sidebar ul {

@@ -1,0 +1,203 @@
+body {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  padding: 0;
+  margin: -10px;
+}
+
+.header h2 {
+  background-color: #4C7BB2;
+  margin: -10px -15px 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px;
+  background-color: transparent;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Adicionar glicemia */
+.add-glicemia {
+  flex: 0.7;
+}
+
+.add-glicemia h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.header-add-glicemia{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2F8EFF;
+  padding: 15px 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group span {
+  margin-left: 5px;
+  color: #555;
+}
+
+.icon {
+  width: 20px;
+  margin-left: 8px;
+}
+
+.btn-adicionar {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Histórico */
+.historico {
+  flex: 1.1;
+}
+
+.header-historico {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2F8EFF;
+  padding: 15px 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.header-historico img {
+  width: 20px;
+}
+
+.header-historico h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.item {
+  margin-top: 10px;
+  padding: 10px;
+  background: #eef5ff;
+  border-radius: 10px;
+}
+
+.item .valor {
+  font-weight: bold;
+}
+
+.status {
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  text-align: center;
+  width: fit-content;
+}
+
+.header-historico .btn-editar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header-historico .btn-editar img {
+  width: 20px;
+}
+
+.status.verde {
+  background: #c8f7c5;
+  color: #2e7d32;
+}
+
+.status.vermelho {
+  background: #f8d7da;
+  color: #c62828;
+}
+
+.status.amarelo {
+  background: #fff9c4;
+  color: #f9a825;
+}
+
+/* Resumo */
+.resumo {
+  flex: 0.9;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.tab {
+  border: none;
+  background: #e0e0e0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.tab.ativo {
+  background: #1976d2;
+  color: white;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-pdf {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+}

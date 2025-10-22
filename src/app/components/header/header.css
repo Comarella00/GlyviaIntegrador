@@ -1,3 +1,7 @@
+.body{
+  margin: 0;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -6,7 +10,14 @@
   color: white;
   padding: 8px 16px;
   height: 50px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  z-index: 100;
   position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .left {
@@ -39,26 +50,27 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
-.user-btn img {
-  width: 28px;
-  height: 28px;
+.user-icon {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #ddd;
-}
+  object-fit: cover;
 
-@media (max-width: 600px) {
-  .logo span {
-    font-size: 16px;
-  }
+  @media (max-width: 600px) {
+    .logo span {
+      font-size: 16px;
+    }
 
-  .logo img {
-    height: 18px;
-  }
+    .logo img {
+      height: 18px;
+    }
 
-  .user-btn img {
-    width: 26px;
-    height: 26px;
+    .user-btn img {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
