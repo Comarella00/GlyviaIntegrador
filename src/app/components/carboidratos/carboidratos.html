@@ -1,28 +1,24 @@
-<body>
+<div class="cardsContainer">
   <div class="card">
-    <div class="card-header">
-      Registre por foto
-    </div>
-    <div class="card-content">
-      <div class="container">
-        <div class="text">
+    <div class="cardHeader">Registre por foto</div>
+    <div class="cardContent">
+      <div class="containerCard">
+        <div class="textContent">
           <p>Envie ou tire uma foto da sua refeição</p>
         </div>
-        <div class="icon">
+        <div class="iconContainer">
           <label for="uploadFoto">
             <img src="icons/food.png" alt="Comida">
           </label>
-          <input type="file" id="uploadFoto" (change)="processarFoto($event)" accept="image/*" style="display: none;">
+          <input type="file" id="uploadFoto" (change)="processarFoto($event)" accept="image/jpg, .jpeg" style="display: none;">
         </div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-header">
-      Algumas dicas rápidas
-    </div>
-    <div class="card-content">
+    <div class="cardHeader">Algumas dicas rápidas</div>
+    <div class="cardContent">
       <ul>
         <li>Enquadre toda a refeição</li>
         <li>Mostre cada item nitidamente</li>
@@ -30,4 +26,4 @@
       </ul>
     </div>
   </div>
-</body>
+</div>

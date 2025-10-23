@@ -6,7 +6,7 @@ body {
 }
 
 .header h2 {
-  background-color: #4C7BB2;
+  background-color: #4c7bb2;
   margin: -10px -15px 20px;
   color: white;
   font-size: 20px;
@@ -24,7 +24,7 @@ body {
 }
 
 .card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
   padding: 20px;
   flex: 1;
@@ -36,27 +36,27 @@ body {
   margin-bottom: 15px;
 }
 
-/* Adicionar glicemia */
-.add-glicemia {
+/* Adicionar Glicemia */
+.addGlicemia {
   flex: 0.7;
 }
 
-.add-glicemia h2 {
+.addGlicemia h2 {
   color: white;
   margin: 0;
   font-size: 1.2rem;
 }
 
-.header-add-glicemia{
+.headerAddGlicemia {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2F8EFF;
+  background: #2f8eff;
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
 }
 
-.input-group {
+.inputGroup {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
@@ -65,14 +65,14 @@ body {
   padding: 8px;
 }
 
-.input-group input {
+.inputGroup input {
   flex: 1;
   border: none;
   outline: none;
   font-size: 14px;
 }
 
-.input-group span {
+.inputGroup span {
   margin-left: 5px;
   color: #555;
 }
@@ -82,7 +82,7 @@ body {
   margin-left: 8px;
 }
 
-.btn-adicionar {
+.btnAdicionar {
   background-color: #1976d2;
   color: white;
   border: none;
@@ -93,24 +93,24 @@ body {
 }
 
 /* Histórico */
-.historico {
+.historicoRecente {
   flex: 1.1;
 }
 
-.header-historico {
+.headerHistorico {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2F8EFF;
+  background: #2f8eff;
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
 }
 
-.header-historico img {
+.headerHistorico img {
   width: 20px;
 }
 
-.header-historico h2 {
+.headerHistorico h2 {
   color: white;
   margin: 0;
   font-size: 1.2rem;
@@ -136,13 +136,13 @@ body {
   width: fit-content;
 }
 
-.header-historico .btn-editar {
+.headerHistorico .btnEditar {
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-.header-historico .btn-editar img {
+.headerHistorico .btnEditar img {
   width: 20px;
 }
 
@@ -191,7 +191,7 @@ body {
   gap: 10px;
 }
 
-.btn-pdf {
+.btnPdf {
   background: #1976d2;
   color: white;
   border: none;

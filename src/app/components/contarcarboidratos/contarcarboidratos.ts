@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
-import {Header} from '../header/header';
-import {Carboidratos} from '../carboidratos/carboidratos';
-import {Resumorefeicao} from '../resumorefeicao/resumorefeicao';
+import { CommonModule } from '@angular/common';
+import { Carboidratos } from '../carboidratos/carboidratos';
+import { Resumorefeicao } from '../resumorefeicao/resumorefeicao';
+import { Alertacarboidratos } from '../alertacarboidratos/alertacarboidratos';
+import { Header } from '../header/header';
 
 @Component({
   selector: 'app-contarcarboidratos',
-  imports: [
-    Header,
-    Carboidratos,
-    Resumorefeicao
-  ],
+  standalone: true,
+  imports: [CommonModule, Header, Carboidratos, Resumorefeicao, Alertacarboidratos],
   templateUrl: './contarcarboidratos.html',
-  styleUrl: './contarcarboidratos.css'
+  styleUrls: ['./contarcarboidratos.css']
 })
 export class Contarcarboidratos {
-  showResumo = false;
-  carboData: number | null = null;
+  fotoProcessada: string | null = null;
 
-  onFotoProcessada(carbo: number) {
-    this.carboData = carbo;
-    this.showResumo = true;
+  onFotoProcessada(foto: string) {
+    this.fotoProcessada = foto;
   }
-
 }
-
