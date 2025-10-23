@@ -58,6 +58,25 @@ body {
   border-radius: 10px;
 }
 
+.reenviarContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonReenviar {
+  background-color: #F4A261;
+  border: 1px solid transparent;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttonReenviar:hover {
+  background-color: #F4A261;
+}
+
 /* Conteúdo do card */
 .cardContent {
   width: 100%;

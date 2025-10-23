@@ -6,14 +6,21 @@
   </div>
 
   <!--Card de enviar Foto e Dicas -->
-  <app-carboidratos (fotoProcessada)="onFotoProcessada($event)"></app-carboidratos>
+  <app-carboidratos
+    *ngIf="!fotoProcessada"
+    (fotoProcessada)="onFotoProcessada($event)">
+  </app-carboidratos>
 
+  <!-- Mostra o resumo apenas depois que a foto for processada -->
   <div class="main-container" *ngIf="fotoProcessada">
-    <app-resumorefeicao [foto]="fotoProcessada"></app-resumorefeicao>
-
+    <app-resumorefeicao
+      [foto]="fotoProcessada"
+      (reenviarImagem)="onReenviarImagem()">
+    </app-resumorefeicao>
+  </div>
 
     <!-- Botão de Alerta que não está funcionando atualmente -->
     <!-- <button (click)="alerta.abrir()" class="btn-aviso">Ver aviso</button> -->
     <!-- <app-alertacarboidratos #alerta [mensagem]="'Estes valores são apenas para correção!'"></app-alertacarboidratos> -->
-  </div>
+
 </div>

@@ -15,7 +15,11 @@ import { Header } from '../header/header';
 export class Contarcarboidratos {
   fotoProcessada: string | null = null;
 
-  onFotoProcessada(foto: string) {
-    this.fotoProcessada = foto;
+  onFotoProcessada(fotoBase64: string) {
+    this.fotoProcessada = fotoBase64;
+  }
+
+  onReenviarImagem() {
+    this.fotoProcessada = null;
   }
 }

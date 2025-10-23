@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,8 +10,13 @@ export class Resumorefeicao {
   constructor(private router: Router) {}
 
   @Input() foto!: string;
+  @Output() reenviarImagem = new EventEmitter<void>();
 
   navigateAlertacarboidratos() {
     this.router.navigate(['/alertacarboidratos']);
+  }
+
+  reenviar() {
+    this.reenviarImagem.emit();
   }
 }
