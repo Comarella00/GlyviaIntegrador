@@ -1,7 +1,8 @@
-<div class="overlay" *ngIf="show">
-  <div class="modal">
-    <h3>Atenção!</h3>
+<div class="overlay">
+  <div class="alertBox">
+    <img src="icons/warning.png" alt="Alerta" class="alertIcon">
+    <h2>ATENÇÃO</h2>
     <p>{{ mensagem }}</p>
-    <button (click)="fechar()">Fechar</button>
+    <button class="btnFechar" (click)="fecharAlerta()">Fechar</button>
   </div>
 </div>

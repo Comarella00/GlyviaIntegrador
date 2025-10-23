@@ -1,5 +1,5 @@
 /* Body do card centralizado na tela */
-body {
+.pageContainer {
   display: flex;
   justify-content: center;
   align-items: center;

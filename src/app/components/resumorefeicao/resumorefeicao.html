@@ -1,43 +1,50 @@
-<body>
-<div class="card">
-  <div class="cardHeader">
-    Resumo da Refeição
-  </div>
-  <div class="resumoContainer">
-    <div class="cardFotoRefeicao">
-      <img [src]="foto" alt="Foto da refeição" class="fotoRefeicao">
+<div class="pageContainer">
+  <div class="card">
+    <div class="cardHeader">
+      Resumo da Refeição
     </div>
 
-  <div class="reenviarContainer">
-    <button class="buttonReenviar" (click)="reenviar()">Reenviar imagem</button>
-  </div>
+    <div class="resumoContainer">
+      <div class="cardFotoRefeicao">
+        <img [src]="foto" alt="Foto da refeição" class="fotoRefeicao">
+      </div>
 
-  <div class="cardContent">
-    <p class="description">Feijoada com arroz branco, couve refogada, farofa e laranja</p>
-    <div class="nutrients">
-      <div class="nutrient">
-        <span class="value">714 kcal</span>
-        <span class="label">Calorias</span>
+      <div class="reenviarContainer">
+        <button class="buttonReenviar" (click)="reenviar()">Reenviar imagem</button>
       </div>
-      <div class="nutrient">
-        <span class="value">89,0 g</span>
-        <span class="label">Carboidratos</span>
-      </div>
-      <button class="buttonInsulina">
-        <div class="nutrient correction">
-          <span class="value">8 u</span>
-          <span class="label">Insulina para correção</span>
+
+      <div class="cardContent">
+        <p class="description">Feijoada com arroz branco, couve refogada, farofa e laranja</p>
+        <div class="nutrients">
+          <div class="nutrient">
+            <span class="value">714 kcal</span>
+            <span class="label">Calorias</span>
+          </div>
+          <div class="nutrient">
+            <span class="value">89,0 g</span>
+            <span class="label">Carboidratos</span>
+          </div>
+          <button class="buttonInsulina">
+            <div class="nutrient correction">
+              <span class="value">8 u</span>
+              <span class="label">Insulina para correção</span>
+            </div>
+          </button>
+          <div class="alert" (click)="abrirAlerta()">
+            <img src="icons/warning.png" alt="Alerta">
+          </div>
         </div>
-      </button>
-      <div class="alert">
-        <img src="icons/warning.png" alt="Alerta">
+        <div class="cardActions">
+          <span>Adicionar ou editar</span>
+          <button class="buttonSalvar">Salvar dados</button>
+        </div>
       </div>
     </div>
-    <div class="cardActions">
-      <span>Adicionar ou editar</span>
-      <button class="buttonSalvar">Salvar dados</button>
-    </div>
   </div>
+
+  <app-alertacarboidratos
+    *ngIf="mostrarAlerta"
+    [mensagem]="'Estes valores são apenas para a correção do alimento!'"
+    (fechar)="fecharAlerta()">
+  </app-alertacarboidratos>
 </div>
-</div>
-</body>

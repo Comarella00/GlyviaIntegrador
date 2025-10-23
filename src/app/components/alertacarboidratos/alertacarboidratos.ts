@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,14 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./alertacarboidratos.css']
 })
 export class Alertacarboidratos {
-  show = false;
-  mensagem = "Aviso";
+  @Input() mensagem!: string;
+  @Output() fechar = new EventEmitter<void>();
 
-  abrir() {
-    this.show = true;
-  }
-
-  fechar(){
-    this.show = false;
+  fecharAlerta() {
+    this.fechar.emit();
   }
 }

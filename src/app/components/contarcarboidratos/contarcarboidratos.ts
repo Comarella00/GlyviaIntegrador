@@ -22,4 +22,5 @@ export class Contarcarboidratos {
   onReenviarImagem() {
     this.fotoProcessada = null;
   }
+
 }
