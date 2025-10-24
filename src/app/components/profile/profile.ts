@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class Profile {
   openSection: string | null = null;
+  showLogoutConfirm = false;
 
 notificacoes = [
   { titulo: 'Resumo da semana', icone: "icons/party-popper.png" },
@@ -30,9 +31,12 @@ notificacoes = [
   }
 
   logout() {
-    const confirmar = window.confirm('Você realmente deseja sair?');
+    this.showLogoutConfirm = true;
+  }
 
-    if (confirmar) {
+  confirmLogout(decisao: boolean) {
+    this.showLogoutConfirm = false;
+    if (decisao) {
       this.router.navigate(['/login']);
     }
   }

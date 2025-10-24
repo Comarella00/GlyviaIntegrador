@@ -156,5 +156,16 @@
   </div>
 
   <button class="logoutBtn" (click)="logout()">SAIR</button>
+  <div class="overlay" *ngIf="showLogoutConfirm">
+    <div class="logout-modal">
+      <img src="icons/Mascote.png" alt="Mascote Glyvia" class="mascote" />
+      <p class="titulo">Ahh você já vai?</p>
+      <p class="mensagem">Tem certeza que deseja sair?</p>
+      <div class="botoes">
+        <button class="btn-sim" (click)="confirmLogout(true)">Sim</button>
+        <button class="btn-nao" (click)="confirmLogout(false)">Não</button>
+      </div>
+    </div>
+  </div>
 </div>
 </body>

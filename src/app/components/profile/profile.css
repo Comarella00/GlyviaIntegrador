@@ -128,3 +128,89 @@ body {
 .logoutBtn:hover {
   background-color: #f36500;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.logout-modal {
+  background: #ffffff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 300px;
+  animation: fadeIn 0.3s ease;
+}
+
+.logout-modal .mascote {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logout-modal .titulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.logout-modal .mensagem {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-sim {
+  background-color: #bdbdbd;
+  color: white;
+  padding: 6px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-nao {
+  background-color: #78b0ff;
+  color: white;
+  padding: 6px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-sim:hover {
+  background-color: #9e9e9e;
+}
+
+.btn-nao:hover {
+  background-color: #5a9eff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
