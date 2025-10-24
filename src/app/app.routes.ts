@@ -12,6 +12,9 @@ import {Contarcarboidratos} from './pages/contarcarboidratos/contarcarboidratos'
 import {Carboidratos} from './components/carboidratos/carboidratos';
 import {Resumorefeicao} from './components/resumorefeicao/resumorefeicao';
 import {Alertacarboidratos} from './components/alertacarboidratos/alertacarboidratos';
+import {Historico} from './pages/historico/historico';
+import {Relatoriosgraficos} from './pages/relatoriosgraficos/relatoriosgraficos';
+import {Lembretes} from './pages/lembretes/lembretes';
 
 export const routes: Routes = [
   { path: '', component: Login },
@@ -27,6 +30,9 @@ export const routes: Routes = [
   { path: 'carboidratos', component: Carboidratos},
   { path: 'resumorefeicao', component: Resumorefeicao},
   { path: 'alertacarboidratos', component: Alertacarboidratos},
+  { path: 'historico', component: Historico},
+  { path: 'relatoriosgraficos', component: Relatoriosgraficos},
+  { path: 'lembretes', component: Lembretes},
   { path: '**', redirectTo: '' },
 ];
 

@@ -1,1 +1,50 @@
-<p>historico works!</p>
+<app-header></app-header>
+
+<div class="header">
+  <h2>Histórico</h2>
+</div>
+
+<div class="container">
+
+  <!-- Card Filtros -->
+  <div class="card filtrosCard">
+    <div class="headerCard">
+      <h2>Filtros</h2>
+    </div>
+    <div class="filtros-container">
+      <div class="filtro">
+        <label>Indicador:</label>
+        <select>
+          <option>Glicemia</option>
+          <option>Carboidratos</option>
+        </select>
+      </div>
+
+      <div class="filtro periodo">
+        <label>Período:</label>
+        <div class="datas">
+          <div>
+            <label>De:</label>
+            <input type="date">
+          </div>
+          <div>
+            <label>Até:</label>
+            <input type="date">
+          </div>
+        </div>
+        <button>Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Conteúdo -->
+  <div class="card conteudoCard">
+    <div class="headerCard">
+      <h2>Resultados</h2>
+    </div>
+    <div class="conteudo-card">
+      Selecione Período
+    </div>
+  </div>
+
+</div>

@@ -27,4 +27,12 @@ export class Sidebar {
   navigateContarcarboidratos(){
     this.router.navigate(['/contarcarboidratos']);
   }
+
+  navigateHistorico() {
+    this.router.navigate(['/historico']);
+  }
+
+  navigateRelatoriosgraficos() {
+    this.router.navigate(['/relatoriosgraficos']);
+  }
 }

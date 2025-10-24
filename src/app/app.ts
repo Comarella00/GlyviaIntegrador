@@ -10,10 +10,14 @@ import {Contarcarboidratos} from './pages/contarcarboidratos/contarcarboidratos'
 import {Carboidratos} from './components/carboidratos/carboidratos';
 import {Resumorefeicao} from './components/resumorefeicao/resumorefeicao';
 import {Alertacarboidratos} from './components/alertacarboidratos/alertacarboidratos';
+import {Historico} from './pages/historico/historico';
+import {Relatoriosgraficos} from './pages/relatoriosgraficos/relatoriosgraficos';
+import {Lembretes} from './pages/lembretes/lembretes';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Login, Perguntas, Sidebar, Profile, Addglicemia, Contarcarboidratos, Carboidratos, Resumorefeicao, Alertacarboidratos],
+  imports: [RouterOutlet, Header, Login, Perguntas, Sidebar, Profile, Addglicemia, Contarcarboidratos,
+    Carboidratos, Resumorefeicao, Alertacarboidratos, Historico, Relatoriosgraficos, Lembretes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
