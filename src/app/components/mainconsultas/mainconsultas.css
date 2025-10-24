@@ -1,0 +1,102 @@
+
+/* Layout principal */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 375px;
+  max-width: 1200px;
+  width: 50%;
+  margin-top: 50px;
+  align-items: center;
+  position: relative;
+}
+
+/* Agrupamento dos cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0.6;
+}
+
+/* Card base */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0 0 10px 0;
+}
+
+/* Cabeçalho do card */
+.card-header {
+  background-color: #2f8eff;
+  border-radius: 15px 15px 0 0;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Ícones de ação (agora só add.png) */
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-icon:hover {
+  opacity: 0.8;
+}
+
+/* Corpo do card */
+.card-body {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Itens da checklist */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.item span {
+  font-size: 0.95rem;
+}
+
+.item .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item .detalhe {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Ícones de checkbox */
+.checkbox-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 8px;
+}

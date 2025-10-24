@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.cards {
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background-color: #2f8eff;
+  border-radius: 15px 15px 0 0;
+  color: white;
+  padding: 0px 15px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body.formulario {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-adicionar {
+  background-color: #2f8eff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn-voltar {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}

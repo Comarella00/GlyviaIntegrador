@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="cards">
+    <div class="card lembrete-card">
+      <div class="card-header">
+        <h3>Novo Remédio</h3>
+        <div class="acoes">
+          <img src="icons/pencil.png" class="btn-icon" alt="Editar"/>
+        </div>
+      </div>
+
+      <div class="card-body formulario">
+        <!-- Descrição do remédio -->
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <input id="descricao" type="text" [(ngModel)]="descricao" placeholder="Nome do remédio"/>
+        </div>
+
+        <!-- Seleção de dias da semana -->
+        <div class="form-group dias">
+          <label>Dias da semana:</label>
+          <div class="dias-container">
+            <div *ngFor="let dia of dias; let i = index" class="dia-item">
+              <img
+                [src]="dia.checked ? 'icons/checkBoxFull.png' : 'icons/checkBoxVoid.png'"
+                (click)="toggleDia(i)"
+                class="checkbox-icon"
+                alt="checkbox"/>
+              <span>{{ dia.nome }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hora -->
+        <div class="form-group">
+          <label for="hora">Hora:</label>
+          <input id="hora" type="time" [(ngModel)]="hora"/>
+        </div>
+
+        <!-- Botão Adicionar -->
+        <div class="botoes-forms">
+          <button class="btn-adicionar" (click)="adicionarRemedio()">Adicionar</button>
+          <button class="btn-voltar" (click)="voltarTela()">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

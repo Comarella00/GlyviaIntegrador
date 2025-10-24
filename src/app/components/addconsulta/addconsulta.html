@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="cards">
+    <div class="card lembrete-card">
+      <div class="card-header">
+        <h3>Nova Consulta</h3>
+        <div class="acoes">
+          <img src="icons/pencil.png" class="btn-icon" alt="Editar"/>
+        </div>
+      </div>
+
+      <div class="card-body formulario">
+        <!-- Descrição da consulta -->
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <input id="descricao" type="text" [(ngModel)]="descricao" placeholder="Nome da consulta"/>
+        </div>
+
+        <!-- Data -->
+        <div class="form-group">
+          <label for="data">Data:</label>
+          <input id="data" type="date" [(ngModel)]="data"/>
+        </div>
+
+        <!-- Hora -->
+        <div class="form-group">
+          <label for="hora">Hora:</label>
+          <input id="hora" type="time" [(ngModel)]="hora"/>
+        </div>
+
+        <!-- Botões -->
+        <div class="botoes-form">
+          <button class="btn-adicionar" (click)="adicionarConsulta()">Adicionar</button>
+          <button class="btn-voltar" (click)="voltarTela()">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
