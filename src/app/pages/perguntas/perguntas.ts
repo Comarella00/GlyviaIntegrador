@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
-import { Header } from '../header/header';
+import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-perguntas',
