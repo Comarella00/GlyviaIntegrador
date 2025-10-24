@@ -13,14 +13,20 @@ import {Alertacarboidratos} from './components/alertacarboidratos/alertacarboidr
 import {Historico} from './pages/historico/historico';
 import {Relatoriosgraficos} from './pages/relatoriosgraficos/relatoriosgraficos';
 import {Lembretes} from './pages/lembretes/lembretes';
+import {Addremedio} from './components/addremedio/addremedio';
+import {Addconsulta} from './components/addconsulta/addconsulta';
+import {Mainremedios} from './components/mainremedios/mainremedios';
+import {Mainconsultas} from './components/mainconsultas/mainconsultas';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header, Login, Perguntas, Sidebar, Profile, Addglicemia, Contarcarboidratos,
-    Carboidratos, Resumorefeicao, Alertacarboidratos, Historico, Relatoriosgraficos, Lembretes],
+    Carboidratos, Resumorefeicao, Alertacarboidratos, Historico, Relatoriosgraficos, Lembretes, Addremedio,
+  Addconsulta, Mainremedios, Mainconsultas],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
   protected readonly title = signal('Glyvia1');
 }

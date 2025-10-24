@@ -13,16 +13,11 @@ import {CommonModule} from '@angular/common';
   styleUrls: ['./resumorefeicao.css']
 })
 export class Resumorefeicao {
-  constructor(private router: Router) {}
 
   @Input() foto!: string;
   @Output() reenviarImagem = new EventEmitter<void>();
 
   mostrarAlerta = false;
-
-  navigateAlertacarboidratos() {
-    this.router.navigate(['/alertacarboidratos']);
-  }
 
   reenviar() {
     this.reenviarImagem.emit();

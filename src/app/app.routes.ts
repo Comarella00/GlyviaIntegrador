@@ -15,6 +15,10 @@ import {Alertacarboidratos} from './components/alertacarboidratos/alertacarboidr
 import {Historico} from './pages/historico/historico';
 import {Relatoriosgraficos} from './pages/relatoriosgraficos/relatoriosgraficos';
 import {Lembretes} from './pages/lembretes/lembretes';
+import {Addremedio} from './components/addremedio/addremedio';
+import {Addconsulta} from './components/addconsulta/addconsulta';
+import {Mainremedios} from './components/mainremedios/mainremedios';
+import {Mainconsultas} from './components/mainconsultas/mainconsultas';
 
 export const routes: Routes = [
   { path: '', component: Login },
@@ -33,6 +37,10 @@ export const routes: Routes = [
   { path: 'historico', component: Historico},
   { path: 'relatoriosgraficos', component: Relatoriosgraficos},
   { path: 'lembretes', component: Lembretes},
+  { path: 'addremedio', component: Addremedio},
+  { path: 'addconsulta', component: Addconsulta},
+  { path: 'mainremedios', component: Mainremedios},
+  { path: 'mainconsultas', component: Mainconsultas},
   { path: '**', redirectTo: '' },
 ];
 

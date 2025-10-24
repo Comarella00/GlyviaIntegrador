@@ -35,4 +35,8 @@ export class Sidebar {
   navigateRelatoriosgraficos() {
     this.router.navigate(['/relatoriosgraficos']);
   }
+
+  navigateLembretes() {
+    this.router.navigate(['/lembretes']);
+  }
 }

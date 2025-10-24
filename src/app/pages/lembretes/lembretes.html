@@ -1,1 +1,20 @@
-<p>lembretes works!</p>
+<app-header></app-header>
+
+<div class="header">
+  <h2>Lembretes</h2>
+</div>
+
+<app-mainremedios></app-mainremedios>
+<app-mainconsultas></app-mainconsultas>
+<app-addremedio></app-addremedio>
+<app-addconsulta></app-addconsulta>
+
+  <!-- Tela principal com os cards -->
+  <div *ngIf="telaAtiva === 'principal'">
+    <app-mainremedios (adicionar)="goToAdd($event)"></app-mainremedios>
+    <app-mainconsultas (adicionar)="goToAdd($event)"></app-mainconsultas>
+
+  <!-- Formulários de adicionar
+  <app-addremedio *ngIf="telaAtiva === 'addRemedio'" (voltar)="telaAtiva='principal'"></app-addremedio>
+  <app-addconsulta *ngIf="telaAtiva === 'addConsulta'" (voltar)="telaAtiva='principal'"></app-addconsulta> -->
+</div>
