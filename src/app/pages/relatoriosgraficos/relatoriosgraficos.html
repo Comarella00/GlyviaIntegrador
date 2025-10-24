@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="header">
+  <h2>Relatórios e Gráficos</h2>
+</div>
+
+<div class="container">
+
+  <!-- Card Seleção -->
+  <div class="card selecaoCard">
+    <div class="headerCard">
+      <h2>Selecione</h2>
+    </div>
+
+    <div class="conteudo">
+      <!-- Tipo de Visualização -->
+      <div class="campo">
+        <div class="toggle">
+          <button
+            [class.ativo]="toggleAtivo === 'relatorio'"
+            (click)="setToggle('relatorio')">
+            Relatório
+          </button>
+          <button
+            [class.ativo]="toggleAtivo === 'grafico'"
+            (click)="setToggle('grafico')">
+            Gráfico
+          </button>
+          <div class="indicador" [ngStyle]="{'left': toggleAtivo === 'relatorio' ? '0%' : '50%'}"></div>
+        </div>
+      </div>
+
+      <!-- Tipo de Dado -->
+      <div class="campo">
+        <label>Tipo de Dado:</label>
+        <select>
+          <option>Glicemia</option>
+          <option>Pressão</option>
+          <option>Colesterol</option>
+        </select>
+      </div>
+
+      <!-- Período -->
+      <div class="campo">
+        <label>Período:</label>
+        <div class="datas">
+          <div>
+            <label>De:</label>
+            <input type="date">
+          </div>
+          <div>
+            <label>Até:</label>
+            <input type="date">
+          </div>
+        </div>
+      </div>
+
+      <div class="botaoContainer">
+        <button class="btnBuscar">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Resultados -->
+  <div class="card resultadoCard">
+    <div class="headerCard">
+      <h2>Resultados</h2>
+    </div>
+    <div class="conteudo">
+      <p style="text-align:center; margin-top:50px;">
+        Informe os Dados e clique em Buscar!
+      </p>
+    </div>
+  </div>
+
+</div>

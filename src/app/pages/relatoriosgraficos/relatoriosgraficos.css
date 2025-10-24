@@ -1,0 +1,146 @@
+.header h2 {
+  background-color: #4C7BB2;
+  margin: -10px -15px 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 15px;
+}
+
+/* Container geral */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  justify-content: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Card geral */
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 0 0 20px 0; /* padding só inferior */
+  flex: 0.3;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Header do card azul */
+.headerCard {
+  display: flex;
+  align-items: center;
+  background: #2f8eff;
+  padding: 15px 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.headerCard h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Conteúdo do card */
+.card .conteudo {
+  padding: 20px;
+}
+
+/* Campos internos */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Toggle Relatório / Gráfico */
+.toggle {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px; /* ajuste conforme necessário */
+}
+
+.toggle button {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+  color: gray;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.toggle button.ativo {
+  color: white;
+}
+
+/* Indicador deslizante */
+.indicador {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%; /* metade do toggle */
+  background: #1976d2;
+  border-radius: 8px;
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+/* Inputs e Select */
+input[type="text"], input[type="date"], select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Datas lado a lado */
+.datas {
+  display: flex;
+  gap: 10px;
+}
+
+.datas div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centralizar botão */
+.botaoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botão Buscar */
+.btnBuscar {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnBuscar:hover {
+  background: #1565c0;
+}
+
+/* Card resultados maior */
+.resultadoCard {
+  flex: 0.7;
+}
