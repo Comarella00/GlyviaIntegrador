@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Header} from './components/header/header';
-import {Login} from './components/login/login';
-import {Perguntas} from './components/perguntas/perguntas';
+import {Login} from './pages/login/login';
+import {Perguntas} from './pages/perguntas/perguntas';
 import {Sidebar} from './components/sidebar/sidebar';
-import {Profile} from './components/profile/profile';
-import {Addglicemia} from './components/addglicemia/addglicemia';
-import {Contarcarboidratos} from './components/contarcarboidratos/contarcarboidratos';
+import {Profile} from './pages/profile/profile';
+import {Addglicemia} from './pages/addglicemia/addglicemia';
+import {Contarcarboidratos} from './pages/contarcarboidratos/contarcarboidratos';
 import {Carboidratos} from './components/carboidratos/carboidratos';
 import {Resumorefeicao} from './components/resumorefeicao/resumorefeicao';
 import {Alertacarboidratos} from './components/alertacarboidratos/alertacarboidratos';

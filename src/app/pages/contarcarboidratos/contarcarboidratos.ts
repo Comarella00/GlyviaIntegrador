@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Carboidratos } from '../carboidratos/carboidratos';
-import { Resumorefeicao } from '../resumorefeicao/resumorefeicao';
-import { Alertacarboidratos } from '../alertacarboidratos/alertacarboidratos';
-import { Header } from '../header/header';
+import { Carboidratos } from '../../components/carboidratos/carboidratos';
+import { Resumorefeicao } from '../../components/resumorefeicao/resumorefeicao';
+import { Alertacarboidratos } from '../../components/alertacarboidratos/alertacarboidratos';
+import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-contarcarboidratos',
