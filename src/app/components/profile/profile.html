@@ -19,17 +19,17 @@
     </div>
 
     <div class="sectionContent" *ngIf="openSection === 'notificacoes'">
-      <div class="notification">
+      <div class="notification" *ngFor="let notificacao of notificacoes; let i = index">
         <div class="icon">
-          <img src="icons/party-popper.png" alt="Festa" />
+          <img [src]="notificacao.icone" [alt]="notificacao.titulo" />
         </div>
         <div>
-          <strong>Resumo da semana</strong>
+          <strong>{{ notificacao.titulo }}</strong>
         </div>
-        <button class="closeBtn">✕</button>
+        <button class="closeBtn" (click)="removerNotificacao(i)">✕</button>
       </div>
 
-      <div class="notification">
+      <!--<div class="notification">
         <div class="icon">
           <img src="icons/sad-face.png" alt="Cara triste" />
         </div>
@@ -47,10 +47,9 @@
           <strong>Dia de comemorar</strong>
         </div>
         <button class="closeBtn">✕</button>
-      </div>
+      </div>-->
     </div>
   </div>
-
   <!-- BLOCO 2 - DADOS DA CONTA -->
   <div class="section">
     <div class="sectionHeader" (click)="toggleSection('conta')">
