@@ -3,19 +3,18 @@ import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-addconsulta',
-  imports: [
-    FormsModule
-  ],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './addconsulta.html',
-  styleUrl: './addconsulta.css'
+  styleUrls: ['./addconsulta.css']
 })
 export class Addconsulta {
   @Output() adicionar = new EventEmitter<void>();
   @Output() voltar = new EventEmitter<void>();
 
-  descricao: string = '';
-  data: string = '';
-  hora: string = '';
+  descricao = '';
+  data = '';
+  hora = '';
 
   adicionarConsulta() {
     if (!this.descricao || !this.data || !this.hora) {

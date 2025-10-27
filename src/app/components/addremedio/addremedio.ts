@@ -3,19 +3,17 @@ import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-addremedio',
-  imports: [
-    FormsModule
-  ],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './addremedio.html',
-  styleUrl: './addremedio.css'
+  styleUrls: ['./addremedio.css']
 })
 export class Addremedio {
   @Output() adicionar = new EventEmitter<void>();
   @Output() voltar = new EventEmitter<void>();
 
-  descricao: string = '';
-  hora: string = '';
-
+  descricao = '';
+  hora = '';
   dias = [
     { nome: 'Seg', checked: false },
     { nome: 'Ter', checked: false },
@@ -36,17 +34,13 @@ export class Addremedio {
       return;
     }
 
-    const diasSelecionados = this.dias
-      .filter(d => d.checked)
-      .map(d => d.nome);
-
+    const diasSelecionados = this.dias.filter(d => d.checked).map(d => d.nome);
     console.log('Novo Remédio:', {
       descricao: this.descricao,
       hora: this.hora,
       dias: diasSelecionados
     });
 
-    // Aqui você pode emitir um evento para o parent ou salvar em serviço
     this.adicionar.emit();
 
     // Resetar formulário

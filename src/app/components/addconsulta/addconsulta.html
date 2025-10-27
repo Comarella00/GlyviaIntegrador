@@ -4,7 +4,8 @@
       <div class="card-header">
         <h3>Nova Consulta</h3>
         <div class="acoes">
-          <img src="icons/pencil.png" class="btn-icon" alt="Editar"/>
+          <img src="icons/arrow.png" class="btn-icon" (click)="voltarTela()" alt="Voltar"/>
+          <img src="icons/check.png" class="btn-icon" (click)="adicionarConsulta()" alt="Adicionar"/>
         </div>
       </div>
 
@@ -25,12 +26,6 @@
         <div class="form-group">
           <label for="hora">Hora:</label>
           <input id="hora" type="time" [(ngModel)]="hora"/>
-        </div>
-
-        <!-- Botões -->
-        <div class="botoes-form">
-          <button class="btn-adicionar" (click)="adicionarConsulta()">Adicionar</button>
-          <button class="btn-voltar" (click)="voltarTela()">Voltar</button>
         </div>
       </div>
     </div>

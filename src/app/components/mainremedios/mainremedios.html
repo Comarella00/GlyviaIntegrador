@@ -5,13 +5,19 @@
       <div class="card-header">
         <h3>Remédios</h3>
         <div class="acoes">
-          <img src="icons/add.png" (click)="adicionarItem()" class="btn-icon" alt="Adicionar"/>
+          <img src="icons/add.png" (click)="onAdicionar()" class="btn-icon" alt="Adicionar"/>
           <img src="icons/pencil.png" class="btn-icon" alt="Editar"/>
         </div>
       </div>
       <div class="card-body">
-        <!-- Aqui você coloca os dados do card, como checklist de remédios -->
-        <p>Teste</p>
+        <div class="checkbox remedios">
+          <p>Teste 123 456</p>
+          <img
+            [src]="checked ? 'icons/checkBoxFull.png' : 'icons/checkBoxVoid.png'"
+            (click)="toggleCheckBox()"
+            class="checkBox"
+            alt="Checkbox">
+        </div>
       </div>
     </div>
   </div>

@@ -1,25 +1,31 @@
-
-/* Layout principal */
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
   width: 50%;
   max-width: 1200px;
   gap: 20px;
-  position: fixed;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Agrupamento dos cards */
 .cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
   flex: 0.6;
+  width: 50%;
+  max-width: 500px;
 }
 
-/* Card base */
+.remedios{
+  background-color: #F0F0F0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .card {
   background: #fff;
   border-radius: 15px;
@@ -27,7 +33,6 @@
   padding: 0 0 10px 0;
 }
 
-/* Cabeçalho do card */
 .card-header {
   background-color: #2f8eff;
   border-radius: 15px 15px 0 0;
@@ -43,7 +48,6 @@
   font-size: 1rem;
 }
 
-/* Ícones de ação (agora só add.png) */
 .acoes {
   display: flex;
   gap: 5px;
@@ -60,7 +64,6 @@
   opacity: 0.8;
 }
 
-/* Corpo do card */
 .card-body {
   padding: 10px 15px;
   display: flex;
@@ -68,7 +71,6 @@
   gap: 8px;
 }
 
-/* Itens da checklist */
 .item {
   display: flex;
   justify-content: space-between;
@@ -93,10 +95,48 @@
   font-size: 0.9rem;
 }
 
-/* Ícones de checkbox */
 .checkbox-icon {
   width: 24px;
   height: 24px;
   cursor: pointer;
   margin-right: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.checkBox:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.checkbox.remedios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* texto à esquerda, checkbox à direita */
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #F0F0F0; /* fundo cinza */
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  box-sizing: border-box; /* garante que padding não aumente a largura */
+}
+
+.checkbox.remedios p {
+  margin: 0;
+  font-size: 0.95rem;
+  flex: 1;               /* texto ocupa o máximo possível */
+  white-space: nowrap;    /* impede quebra de linha se não quiser */
+  overflow: hidden;       /* esconde o excesso */
+  text-overflow: ellipsis;/* adiciona "..." se passar da largura */
+  margin-right: 10px;     /* separação da checkbox */
 }

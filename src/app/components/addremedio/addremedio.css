@@ -1,159 +1,72 @@
-/* Layout principal */
 .container {
-  position: fixed;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px;
-  width: 50%;
-  max-width: 1200px;
-  gap: 20px;
+  justify-content: center;
+  margin-left: 40px;
 }
 
-/* Agrupamento dos cards */
-.cards {/* Container dos botões do formulário */
-  .form-buttons {
-    display: flex;
-    gap: 10px; /* espaço entre os botões */
-  }
-
-  /* Botões */
-  .btn-adicionar {
-    padding: 8px 16px;
-    background-color: #2f8eff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.2s;
-  }
-
-  .btn-adicionar:hover {
-    background-color: #256fd1;
-  }
-
-  .btn-voltar {
-    background-color: #aaa;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 0.6;
+.cards {
+  width: 100%;
+  max-width: 500px;
 }
 
-/* Card base */
 .card {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 0 0 10px 0;
 }
 
-/* Cabeçalho do card */
 .card-header {
   background-color: #2f8eff;
   border-radius: 15px 15px 0 0;
   color: white;
-  padding: 10px 15px;
+  padding: 0px 15px;
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card-header h3 {
-  margin: 0;
-  font-size: 1rem;
+.acoes{
+  display: flex;
+  gap: 15px;
 }
 
-/* Ícones de ação */
-.acoes {
+.card-body.formulario {
+  padding: 15px;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
   gap: 5px;
+}
+
+.btn-adicionar {
+  background-color: #2f8eff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn-voltar {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .btn-icon {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-icon:hover {
-  opacity: 0.8;
-}
-
-/* Corpo do card */
-.card-body {
-  padding: 10px 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Itens da checklist */
-.item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f5f7fa;
-  border-radius: 10px;
-  padding: 8px 12px;
-}
-
-.item span {
-  font-size: 0.95rem;
-}
-
-.item .info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.item .detalhe {
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* Ícones de checkbox */
-.checkbox-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  margin-right: 8px;
-}
-
-/* ---------- Formulário de Adicionar Remédio ---------- */
-.formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.form-group label {
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="time"] {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
 }
 
 /* Dias da semana */
@@ -176,26 +89,9 @@
   margin-top: 2px;
 }
 
-/* Botão Adicionar */
-.btn-adicionar {
-  background-color: #2f8eff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 12px;
+.checkbox-icon {
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-}
-
-.btn-voltar {
-  background-color: #aaa;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 12px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.btn-adicionar:hover {
-  background-color: #256fd1;
+  margin-right: 8px;
 }
