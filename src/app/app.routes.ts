@@ -19,6 +19,8 @@ import {Addremedio} from './components/addremedio/addremedio';
 import {Addconsulta} from './components/addconsulta/addconsulta';
 import {Mainremedios} from './components/mainremedios/mainremedios';
 import {Mainconsultas} from './components/mainconsultas/mainconsultas';
+import {Alertas} from './pages/alertas/alertas';
+import {Alertaslembretes} from './components/alertaslembretes/alertaslembretes';
 
 export const routes: Routes = [
   { path: '', component: Login },
@@ -41,6 +43,8 @@ export const routes: Routes = [
   { path: 'addconsulta', component: Addconsulta},
   { path: 'mainremedios', component: Mainremedios},
   { path: 'mainconsultas', component: Mainconsultas},
+  { path: 'alertas', component: Alertas},
+  { path: 'alertaslembretes', component: Alertaslembretes},
   { path: '**', redirectTo: '' },
 ];
 

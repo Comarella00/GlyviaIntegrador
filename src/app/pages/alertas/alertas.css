@@ -1,0 +1,159 @@
+body {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  padding: 0;
+  margin: -10px;
+}
+
+.header h2 {
+  background-color: #4c7bb2;
+  margin: -10px -15px 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  width: 50%;
+  max-width: 1200px;
+  gap: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0.6;
+  width: 50%;
+  max-width: 500px;
+}
+
+.remedios{
+  background-color: #F0F0F0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0 0 10px 0;
+}
+
+.card-header {
+  background-color: #2f8eff;
+  border-radius: 15px 15px 0 0;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-icon:hover {
+  opacity: 0.8;
+}
+
+.card-body {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.item span {
+  font-size: 0.95rem;
+}
+
+.item .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item .detalhe {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.checkbox-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.checkBox:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.checkbox.remedios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* texto à esquerda, checkbox à direita */
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #F0F0F0; /* fundo cinza */
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  box-sizing: border-box; /* garante que padding não aumente a largura */
+}
+
+.checkbox.remedios p {
+  margin: 0;
+  font-size: 0.95rem;
+  flex: 1;               /* texto ocupa o máximo possível */
+  white-space: nowrap;    /* impede quebra de linha se não quiser */
+  overflow: hidden;       /* esconde o excesso */
+  text-overflow: ellipsis;/* adiciona "..." se passar da largura */
+  margin-right: 10px;     /* separação da checkbox */
+}

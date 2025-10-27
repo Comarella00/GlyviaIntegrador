@@ -39,4 +39,8 @@ export class Sidebar {
   navigateLembretes() {
     this.router.navigate(['/lembretes']);
   }
+
+  navigateAlertas() {
+    this.router.navigate(['/alertas']);
+  }
 }

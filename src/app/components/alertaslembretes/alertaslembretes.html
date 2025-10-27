@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="cards">
+    <div class="card lembrete-card">
+      <div class="card-header">
+        <h3>Alertas</h3>
+      </div>
+      <div class="card-lembretes">
+        <div class="checkbox lembretes">
+          <p>Remedios</p>
+          <img
+            [src]="active === 'remedios' ? 'icons/toggleOn.png' : 'icons/toggleOff.png'"
+            (click)="setActive('remedios')"
+            class="checkBox"
+            alt="Checkbox">
+        </div>
+
+        <div class="checkbox lembretes">
+          <p>Consultas</p>
+          <img
+            [src]="active === 'consultas' ? 'icons/toggleOn.png' : 'icons/toggleOff.png'"
+            (click)="setActive('consultas')"
+            class="checkBox"
+            alt="Checkbox">
+        </div>
+      </div>
+      </div>
+
+      <div class="card">
+        <div class="card card-header">
+          <h3>Alertas Críticos</h3>
+        </div>
+        <div class="card-alertasCriticos">
+          <div class="boxAlertasCriticos">
+            <p>Teste</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Rotina</h3>
+        </div>
+        <div class="card-rotina">
+          <div class="boxRotina">
+            <p>Teste</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Checagem Glicemia</h3>
+        </div>
+        <div class="card-checagemGlicemia">
+          <div class="boxChecagemGlicemia">
+            <p>Teste</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
