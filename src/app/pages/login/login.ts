@@ -1,44 +1,65 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms';
-
-
-declare const google: any;
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { UsuarioService } from '../../services/usuario.service';
+import { Usuario } from '../../models/usuario.model';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.html',
-  imports: [
-    FormsModule
-  ],
-  styleUrls: ['./login.css']
+  standalone: true,
+  imports: [FormsModule, CommonModule],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-
-export class Login {
-  constructor(private router: Router) {}
-
+export class LoginComponent {
+  email: string = '';
+  senha: string = '';
+  mensagem: string = '';
   showPassword: boolean = false;
 
-  ngAfterViewInit(): void {
-    // Inicializa o botão de login do Google
-    google.accounts.id.initialize({
-      client_id: 'SEU_CLIENT_ID.apps.googleusercontent.com', // substitua pelo seu client ID do Google Cloud
-      callback: (response: any) => this.handleCredentialResponse(response)
-    });
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router
+  ) {}
 
-    // Renderiza o botão dentro do elemento com a classe .googleBtn
-    google.accounts.id.renderButton(
-      document.querySelector('.googleBtn'),
-      { theme: 'filled_blue', size: 'large', text: 'signin_with', shape: 'rectangular' }
-    );
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 
-  handleCredentialResponse(response: any) {
-    console.log('Token JWT:', response.credential);
+  login() {
+    if (!this.email || !this.senha) {
+      this.mensagem = '⚠️ Preencha todos os campos!';
+      return;
+    }
 
-    // Aqui você pode enviar o token JWT para o backend para validação
-    // e depois navegar para o dashboard:
-    this.router.navigate(['/dashboard']);
+    this.usuarioService.listar().subscribe({
+      next: (usuarios: Usuario[]) => {
+        const usuarioEncontrado = usuarios.find(
+          u => u.email === this.email && u.senha === this.senha
+        );
+
+        if (usuarioEncontrado) {
+          this.mensagem = `✅ Bem-vinda, ${usuarioEncontrado.nome}!`;
+          console.log('Usuário logado:', usuarioEncontrado);
+
+          // Exemplo de redirecionamento
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+          }, 1500);
+        } else {
+          this.mensagem = '❌ Usuário ou senha incorretos.';
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao buscar usuários:', err);
+        this.mensagem = 'Erro ao conectar com o servidor.';
+      }
+    });
+  }
+
+  navigateForgot() {
+    this.router.navigate(['/esqueci-senha']);
   }
 
   navigateCadastro() {
@@ -47,13 +68,5 @@ export class Login {
 
   navigateDashboard() {
     this.router.navigate(['/dashboard']);
-  }
-
-  navigateForgot() {
-    this.router.navigate(['/forgot']);
-  }
-
-  togglePassword() {
-    this.showPassword = !this.showPassword;
   }
 }

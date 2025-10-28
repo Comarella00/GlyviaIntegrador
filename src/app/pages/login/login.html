@@ -1,14 +1,26 @@
 <div class="loginContainer">
   <div class="loginForm">
     <img class="avatar" src="../../../icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
-   <!-- <button class="googleBtn">Sign in with Google</button>-->
+
     <div id="googleBtn" class="googleBtn"></div>
+
     <div class="divider">
       <span>ou</span>
     </div>
-    <form (ngSubmit)="navigateDashboard()">
+
+    <!-- Formulário de Login -->
+    <form (ngSubmit)="login()">
       <label for="email">Email</label>
-      <input class="inputField" id="email" type="email" placeholder="Digite seu email" />
+      <input
+        class="inputField"
+        id="email"
+        type="email"
+        placeholder="Digite seu email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+
       <label for="senha">Senha</label>
       <div class="passwordContainer">
         <input
@@ -16,20 +28,26 @@
           id="senha"
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Digite sua senha"
+          [(ngModel)]="senha"
+          name="senha"
+          required
         />
         <button type="button" class="eyeBtn" (click)="togglePassword()">
-          <img [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'" alt="Mostrar/Ocultar senha" />
+          <img
+            [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'"
+            alt="Mostrar/Ocultar senha"
+          />
         </button>
       </div>
-
 
       <button type="submit" class="loginBtn">Entrar</button>
       <button type="button" class="forgotBtn" (click)="navigateForgot()">Esqueci minha senha</button>
     </form>
 
-    <p class="signUp" (click)="navigateCadastro()">
-      Não tem uma conta? Cadastre-se
-    </p>
+    <p class="signUp" (click)="navigateCadastro()">Não tem uma conta? Cadastre-se</p>
+
+    <!-- Mensagem de feedback -->
+    <p class="mensagem">{{ mensagem }}</p>
   </div>
 
   <div class="loginImage">
