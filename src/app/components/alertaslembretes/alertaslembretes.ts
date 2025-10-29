@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-alertaslembretes',
+  standalone: true,
   imports: [],
   templateUrl: './alertaslembretes.html',
   styleUrl: './alertaslembretes.css'

@@ -4,6 +4,7 @@ import {NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-relatoriosgraficos',
+  standalone: true,
   imports: [
     Header,
     NgStyle

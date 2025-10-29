@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-addglicemia',
+  standalone: true,
   imports: [
     Header
   ],

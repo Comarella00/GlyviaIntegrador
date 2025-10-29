@@ -4,6 +4,7 @@ import {Header} from '../header/header';
 @Component({
   selector: 'app-carboidratos',
   templateUrl: './carboidratos.html',
+  standalone: true,
   imports: [
     Header
   ],

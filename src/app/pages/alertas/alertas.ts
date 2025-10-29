@@ -4,6 +4,7 @@ import {Alertaslembretes} from '../../components/alertaslembretes/alertaslembret
 
 @Component({
   selector: 'app-alertas',
+  standalone: true,
   imports: [
     Header,
     Alertaslembretes

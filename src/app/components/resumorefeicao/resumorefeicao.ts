@@ -6,6 +6,7 @@ import {CommonModule} from '@angular/common';
 @Component({
   selector: 'app-resumorefeicao',
   templateUrl: './resumorefeicao.html',
+  standalone: true,
   imports: [
     CommonModule,
     Alertacarboidratos

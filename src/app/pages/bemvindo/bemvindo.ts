@@ -4,7 +4,8 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bemvindo',
-    imports: [
+  standalone: true,
+  imports: [
         Header
     ],
   templateUrl: './bemvindo.html',

@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   imports: [],
+  standalone: true,
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })

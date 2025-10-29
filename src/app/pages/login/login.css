@@ -1,4 +1,4 @@
-.loginContainer {
+.login-container {
   display: flex;
   width: 100%;
   height: 100vh;
@@ -6,7 +6,7 @@
   margin: -10px 10px -10px -10px;
 }
 
-.loginForm {
+.login-form {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -24,14 +24,14 @@
   margin-bottom: 1rem;
 }
 
-.googleBtn {
+.google-btn {
   width: 100%;
   max-width: 300px;
   padding: 10px;
   margin-bottom: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #1f5da6;
+  background-color: #20529D;
   color: #fff;
   cursor: pointer;
 }
@@ -65,7 +65,7 @@ form {
   max-width: 300px;
 }
 
-.inputField {
+.input {
   margin: 8px 0;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -74,8 +74,8 @@ form {
   padding: 10px;
 }
 
-.loginBtn {
-  background-color: #20529d;
+.login-btn {
+  background-color: #20529D;
   color: #fff;
   border: none;
   padding: 10px;
@@ -84,39 +84,7 @@ form {
   cursor: pointer;
 }
 
-.passwordContainer {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin: 8px 0;
-}
-
-.passwordContainer .inputField {
-  flex: 1;
-  padding: 10px;
-  border-radius: 4px 0 0 4px;
-  border: 1px solid transparent;
-  border-right: none;
-  box-sizing: border-box;
-}
-
-.eyeBtn {
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.eyeBtn img {
-  width: 24px;
-  height: 24px;
-}
-
-.forgotBtn {
+.forgot-btn {
   background: none;
   color: #333;
   border: none;
@@ -125,19 +93,19 @@ form {
   margin-top: 5px;
 }
 
-.signUp {
+.signup {
   margin-top: 10px;
   color: #333;
   cursor: pointer;
 }
 
-.loginImage {
+.login-image {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #20529d;
+  background: #20529D;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -147,7 +115,7 @@ form {
   margin-right: -10px;
 }
 
-.loginImage img {
+.login-image img {
   width: 80%;
   max-width: 400px;
   height: auto;
@@ -155,18 +123,17 @@ form {
 }
 
 @media (max-width: 768px) {
-  .loginContainer {
+  .login-container {
     flex-direction: column;
   }
 
-  .loginForm,
-  .loginImage {
+  .login-form, .login-image {
     flex: none;
     width: 100%;
     padding: 15px;
   }
 
-  .loginImage {
+  .login-image {
     order: -1;
     height: 200px;
   }

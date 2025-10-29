@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+/*import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -13,4 +13,4 @@ export class ApiService {
   getData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/dados`);
   }
-}
+}*/

@@ -4,6 +4,7 @@ import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-perguntas',
+  standalone: true,
   imports: [
     Header
 

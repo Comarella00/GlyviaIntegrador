@@ -1,58 +1,27 @@
-<div class="loginContainer">
-  <div class="loginForm">
-    <img class="avatar" src="../../../icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
-
-    <div id="googleBtn" class="googleBtn"></div>
-
+<div class="login-container">
+  <div class="login-form">
+    <img class="avatar" src="icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
+    <button class="google-btn">Sign in with Google</button>
     <div class="divider">
       <span>ou</span>
     </div>
-
-    <!-- Formulário de Login -->
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="navigateDashboard()">
       <label for="email">Email</label>
-      <input
-        class="inputField"
-        id="email"
-        type="email"
-        placeholder="Digite seu email"
-        [(ngModel)]="email"
-        name="email"
-        required
-      />
-
+      <input class="input" id="email" type="email" placeholder="Digite seu email" />
       <label for="senha">Senha</label>
-      <div class="passwordContainer">
-        <input
-          class="inputField"
-          id="senha"
-          [type]="showPassword ? 'text' : 'password'"
-          placeholder="Digite sua senha"
-          [(ngModel)]="senha"
-          name="senha"
-          required
-        />
-        <button type="button" class="eyeBtn" (click)="togglePassword()">
-          <img
-            [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'"
-            alt="Mostrar/Ocultar senha"
-          />
-        </button>
-      </div>
-
-      <button type="submit" class="loginBtn">Entrar</button>
-      <button type="button" class="forgotBtn" (click)="navigateForgot()">Esqueci minha senha</button>
+      <input class="input" id="senha" type="password" placeholder="Digite sua senha" />
+      <button type="submit" class="login-btn">Entrar</button>
+      <button type="button" class="forgot-btn" (click)="navigateForgot()">Esqueci minha senha</button>
     </form>
 
-    <p class="signUp" (click)="navigateCadastro()">Não tem uma conta? Cadastre-se</p>
-
-    <!-- Mensagem de feedback -->
-    <p class="mensagem">{{ mensagem }}</p>
+    <p class="signup" (click)="navigateCadastro()">
+      Não tem uma conta? Cadastre-se
+    </p>
   </div>
 
-  <div class="loginImage">
+  <div class="login-image">
     <h1>Glyvia</h1>
     <p>Controle inteligente. Vida equilibrada.</p>
-    <img src="../../../icons/login-image.png" alt="Login illustration" />
+    <img src="icons/login-image.png" alt="Login illustration" />
   </div>
 </div>

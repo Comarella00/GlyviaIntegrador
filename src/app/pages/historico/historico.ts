@@ -3,6 +3,7 @@ import {Header} from '../../components/header/header';
 
 @Component({
   selector: 'app-historico',
+  standalone: true,
   imports: [
     Header
   ],
