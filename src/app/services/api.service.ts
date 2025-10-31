@@ -1,11 +1,11 @@
-/*import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8080/Glyvia';
+  private baseUrl = 'http://localhost:8080/Glyvia/usuario';
 
   constructor(private http: HttpClient) {
   }
@@ -13,4 +13,4 @@ export class ApiService {
   getData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/dados`);
   }
-}*/
+}

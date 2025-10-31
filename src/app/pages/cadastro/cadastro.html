@@ -1,48 +1,62 @@
-<body>
+<main>
 <div class="cadastroContainer">
-  <div class="background">
-    <img src="../../../icons/login-image.png" alt="Cadastro background" />
-  </div>
-
   <div class="cadastroForm">
-    <form>
+    <form (ngSubmit)="cadastrarUsuario()" #cadastroForm="ngForm">
       <img class="avatar" src="../../../icons/Glyvia_PNG.png" alt="Logo da Glyvia" />
 
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="Digite seu email" />
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Digite seu email"
+        [(ngModel)]="usuario.email"
+        required
+      />
 
       <label for="senha">Senha</label>
       <div class="passwordContainer">
         <input
           class="inputField"
           id="senha"
+          name="senha"
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Digite sua senha"
+          [(ngModel)]="usuario.senha"
+          required
         />
         <button type="button" class="eyeBtn" (click)="togglePassword()">
-          <img [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'" alt="Mostrar/Ocultar senha" />
+          <img
+            [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'"
+            alt="Mostrar/Ocultar senha"
+          />
         </button>
       </div>
 
-
+      <label for="confirmarSenha">Confirme sua senha</label>
       <div class="passwordContainer">
         <input
           class="inputField"
-          id="senha"
+          id="confirmarSenha"
+          name="confirmarSenha"
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Confirme sua senha"
+          [(ngModel)]="usuario.confirmarSenha"
+          required
         />
         <button type="button" class="eyeBtn" (click)="togglePassword()">
-          <img [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'" alt="Mostrar/Ocultar senha" />
+          <img
+            [src]="showPassword ? 'icons/eyesOpen.png' : 'icons/eyesClosed.png'"
+            alt="Mostrar/Ocultar senha"
+          />
         </button>
       </div>
 
-
       <div class="buttons">
         <button type="button" class="backBtn" (click)="goBack()">Voltar</button>
-        <button type="submit" class="createBtn" (click)="navigatePerguntas()">Criar</button>
+        <button type="submit" class="createBtn">Criar</button>
       </div>
     </form>
   </div>
 </div>
-</body>
+</main>
