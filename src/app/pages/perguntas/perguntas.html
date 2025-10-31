@@ -9,63 +9,63 @@
       <h1>Personalizando seu Glyvia</h1>
     </div>
 
-    <form>
+    <form (ngSubmit)="salvarPerguntas()" #perguntasForm="ngForm">
       <label for="nome">Nome</label>
       <div class="largeBox">
-        <input type="text" id="nome" />
+        <input type="text" id="nome" [(ngModel)]="nome" name="nome" required />
       </div>
 
       <div class="row">
         <div class="fieldGroup">
           <label for="genero">Gênero</label>
           <div class="mediumBox">
-            <input type="text" id="genero" />
+            <input type="text" id="genero" [(ngModel)]="genero" name="genero" required />
           </div>
         </div>
 
         <div class="fieldGroup">
           <label for="altura">Altura</label>
           <div class="mediumBox">
-            <input type="number" id="altura" />
+            <input type="number" id="altura" [(ngModel)]="altura" name="altura" required />
           </div>
         </div>
 
         <div class="fieldGroup">
           <label for="peso">Peso Atual</label>
           <div class="mediumBox">
-            <input type="number" id="peso" />
+            <input type="number" id="peso" [(ngModel)]="pesoAtual" name="pesoAtual" required />
           </div>
         </div>
       </div>
 
       <label for="insulina">Tipo de Insulina</label>
       <div class="largeBox">
-        <input type="text" id="insulina" />
+        <input type="text" id="insulina" [(ngModel)]="tipoInsulina" name="tipoInsulina" required />
       </div>
 
       <label for="aplicacao">Via de Aplicação</label>
       <div class="largeBox">
-        <input type="text" id="aplicacao" />
+        <input type="text" id="aplicacao" [(ngModel)]="viaAplicacao" name="viaAplicacao" required />
       </div>
 
       <label for="nascimento">Data de Nascimento</label>
       <div class="mediumBox">
-        <input type="date" id="nascimento" />
+        <input type="date" id="nascimento" [(ngModel)]="dataNascimento" name="dataNascimento" required />
       </div>
 
       <label for="icr">ICR - Relação Insulina/Carboidrato</label>
       <div class="largeBox">
-        <input type="text" id="icr" />
+        <input type="text" id="icr" [(ngModel)]="icr" name="icr" required />
       </div>
 
       <label for="metaGlicemica">Meta Glicemia</label>
       <div class="mediumBox">
-        <input type="text" id="metaGlicemica" />
+        <input type="text" id="metaGlicemica" [(ngModel)]="metaGlicemica" name="metaGlicemica" required />
       </div>
 
       <div class="formActions">
         <button type="button" class="backBtn" (click)="navigateGoBack()">←</button>
-        <button type="submit" class="okBtn" (click)="navigateDashboard()">Ok</button>
+        <button type="button" class="okBtn" (click)="salvarPerguntas()">Ok</button>
       </div>
     </form>
   </div>

@@ -2,13 +2,13 @@ export interface Usuario {
   idUsuario?: number;
   email: string;
   senha: string;
-  nome: string;
-  genero: string;
-  altura: number;
-  pesoAtual: number;
-  tipoInsulina: string;
-  viaAplicacao: string;
-  dataNascimento: string;
-  icr: number;
-  metaGlicemica: number;
+  nome?: string;
+  genero?: string;
+  tipoInsulina?: string;
+  viaAplicacao?: string;
+  pesoAtual?: number;
+  altura?: number;
+  metaGlicemica?: number;
+  icr?: number;
+  dataNascimento?: string;
 }

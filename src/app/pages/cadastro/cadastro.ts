@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; // Para ngIf, ngFor, etc.
+import {CadastroService} from '../../services/cadastro.service';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -11,7 +13,7 @@ import { CommonModule } from '@angular/common'; // Para ngIf, ngFor, etc.
   standalone: true,
   imports: [
     FormsModule,
-    CommonModule // necessário para diretivas do Angular
+    CommonModule
   ]
 })
 export class Cadastro {
@@ -23,7 +25,7 @@ export class Cadastro {
     confirmarSenha: ''
   };
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient, private cadastroService: CadastroService) {}
 
   togglePassword() {
     this.showPassword = !this.showPassword;
@@ -45,17 +47,22 @@ export class Cadastro {
       confirmarSenha: this.usuario.confirmarSenha
     };
 
-    this.http.post('http://localhost:8080/Glyvia/usuario/cadastro', body, { responseType: 'text' })
-      .subscribe({
-        next: (response) => {
-          console.log('Resposta do backend:', response);  // Para debug
-          alert('Usuário cadastrado com sucesso!');
-          this.router.navigate(['/bemvindo']);
-        },
-        error: (err) => {
-          console.error(err);
-          alert('Erro ao cadastrar usuário!');
-        }
-      });
+    this.http.post<{mensagem: string, id: number}>(
+      'http://localhost:8080/Glyvia/usuario/cadastro', body
+    ).subscribe({
+      next: (response) => {
+        alert(response.mensagem);
+
+        // Salva o ID no service para usar no componente Perguntas
+        this.cadastroService.usuario.idUsuario = response.id;
+
+        this.router.navigate(['/bemvindo']);
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Erro ao cadastrar usuário!');
+      }
+    });
+
   }
 }
