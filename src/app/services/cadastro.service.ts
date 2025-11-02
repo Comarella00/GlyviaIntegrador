@@ -4,6 +4,7 @@ import { Usuario } from '../models/usuario.model';
 import {Observable} from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
+
 export class CadastroService {
   usuario: Usuario = { email: '',
     senha: '' };

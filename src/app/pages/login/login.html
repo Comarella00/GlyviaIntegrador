@@ -7,12 +7,29 @@
     </div>
     <form (ngSubmit)="navigateDashboard()">
       <label for="email">Email</label>
-      <input class="input" id="email" type="email" placeholder="Digite seu email" />
+      <input
+        class="input"
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Digite seu email"
+        [(ngModel)]="email"
+        required
+      />
       <label for="senha">Senha</label>
-      <input class="input" id="senha" type="password" placeholder="Digite sua senha" />
+      <input
+        class="input"
+        id="senha"
+        name="senha"
+        type="password"
+        placeholder="Digite sua senha"
+        [(ngModel)]="senha"
+        required
+      />
       <button type="submit" class="login-btn">Entrar</button>
       <button type="button" class="forgot-btn" (click)="navigateForgot()">Esqueci minha senha</button>
     </form>
+
 
     <p class="signup" (click)="navigateCadastro()">
       Não tem uma conta? Cadastre-se

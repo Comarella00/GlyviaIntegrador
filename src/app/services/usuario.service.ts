@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class UsuarioService {
+  private apiUrl = 'http://localhost:8080/Glyvia/usuario';
+
+  constructor(private http: HttpClient) {}
+
+  // Faz login no backend
+  login(email: string, senha: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, { email, senha });
+  }
+
+  // Salva o usuário logado no localStorage
+  salvarUsuarioLocal(usuario: any) {
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+  }
+
+  // Recupera o usuário logado
+  obterUsuarioLocal() {
+    const user = localStorage.getItem('usuario');
+    return user ? JSON.parse(user) : null;
+  }
+
+  // Remove o usuário (logout)
+  logout() {
+    localStorage.removeItem('usuario');
+  }
+}
