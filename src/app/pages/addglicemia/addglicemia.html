@@ -1,5 +1,5 @@
 <app-header></app-header>
-<body>
+
 <div class="header">
   <h2>Adicionar Glicemia</h2>
 </div>
@@ -11,26 +11,24 @@
       <h2>Adicionar Glicemia</h2>
     </div>
 
-    <br>
+    <br />
     <label for="nivel">Nível de glicose:</label>
     <div class="inputGroup">
-      <input id="nivel" type="number" placeholder="Digite o valor" />
+      <input id="nivel" type="number" placeholder="Digite o valor" [(ngModel)]="nivel" />
       <span>mg/dL</span>
     </div>
 
-    <br>
     <label for="data">Data:</label>
     <div class="inputGroup">
-      <input id="data" type="date" />
+      <input id="data" type="date" [(ngModel)]="data" />
     </div>
 
-    <br>
     <label for="hora">Horário:</label>
     <div class="inputGroup">
-      <input id="hora" type="time" />
+      <input id="hora" type="time" [(ngModel)]="hora" />
     </div>
 
-    <button class="btnAdicionar">Adicionar</button>
+    <button class="btnAdicionar" (click)="adicionar()">Adicionar</button>
   </div>
 
   <!-- COLUNA 2 - Histórico Recente -->
@@ -42,56 +40,60 @@
       </button>
     </div>
 
-    <div class="item">
-      <div class="valor">110 mg/dL</div>
-      <div class="hora">08:30h</div>
-      <div class="status verde">Está dentro da faixa alvo</div>
-    </div>
-    <div class="item">
-      <div class="valor">110 mg/dL</div>
-      <div class="hora">08:30h</div>
-      <div class="status verde">Está dentro da faixa alvo</div>
-    </div>
-    <div class="item">
-      <div class="valor">110 mg/dL</div>
-      <div class="hora">08:30h</div>
-      <div class="status verde">Está dentro da faixa alvo</div>
-    </div>
-    <div class="item">
-      <div class="valor">110 mg/dL</div>
-      <div class="hora">08:30h</div>
-      <div class="status verde">Está dentro da faixa alvo</div>
+    <div class="item" *ngFor="let item of historico | slice:0:4">
+      <div class="valor">{{ item.valorGlicemia }} mg/dL</div>
+      <div class="hora">{{ item.horaGlicemia }}</div>
+      <div
+        class="status"
+        [ngClass]="{
+          verde: item.status === 'Normal',
+          amarelo: item.status === 'Intolerância à glicose',
+          vermelho: item.status === 'Diabetes'
+        }"
+      >
+        {{ item.status }}
+      </div>
     </div>
   </div>
 
   <!-- COLUNA 3 - Resumo -->
   <div class="card resumo">
     <div class="tabs">
-      <button class="tab ativo">Hoje</button>
-      <button class="tab">Semana</button>
-      <button class="tab">Mês</button>
+      <button
+        class="tab"
+        [class.ativo]="resumoSelecionado === 'hoje'"
+        (click)="selecionarResumo('hoje')">Hoje</button>
+      <button
+        class="tab"
+        [class.ativo]="resumoSelecionado === 'semana'"
+        (click)="selecionarResumo('semana')">Semana</button>
+      <button
+        class="tab"
+        [class.ativo]="resumoSelecionado === 'mes'"
+        (click)="selecionarResumo('mes')">Mês</button>
     </div>
 
     <div class="lista">
-      <div class="linha">
-        <div class="valor">110 mg/dL</div>
-        <div class="status verde">Está dentro da faixa alvo</div>
+      <div class="linha" *ngFor="let item of historicoFiltrado">
+        <div class="valor">{{ item.valorGlicemia }} mg/dL</div>
+        <div
+          class="status"
+          [ngClass]="{
+            verde: item.status === 'Normal',
+            amarelo: item.status === 'Intolerância à glicose',
+            vermelho: item.status === 'Diabetes'
+          }"
+        >
+          {{ item.status }}
+        </div>
       </div>
-      <div class="linha">
-        <div class="valor">115 mg/dL</div>
-        <div class="status verde">Está dentro da faixa alvo</div>
-      </div>
-      <div class="linha">
-        <div class="valor">75 mg/dL</div>
-        <div class="status amarelo">Glicemia perto da faixa alvo</div>
-      </div>
-      <div class="linha">
-        <div class="valor">80 mg/dL</div>
-        <div class="status amarelo">Glicemia perto da faixa alvo</div>
+
+      <!-- Caso não haja registros -->
+      <div class="sem-dados" *ngIf="historicoFiltrado.length === 0">
+        Nenhum registro encontrado para {{ resumoSelecionado }}.
       </div>
     </div>
 
     <button class="btnPdf">Exportar PDF</button>
   </div>
 </div>
-</body>

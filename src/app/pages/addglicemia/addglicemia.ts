@@ -1,17 +1,123 @@
 import { Component } from '@angular/core';
-import {Header} from '../../components/header/header';
-import {Router} from '@angular/router';
+import { Header } from '../../components/header/header';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { GlicemiaService } from '../../services/glicemia.service';
+import {CadastroGlicemiaRequest} from '../../models/cadastro.glicemia.request.model';
+import {HistoricoItem} from '../../models/historico.item.model';
 
 @Component({
   selector: 'app-addglicemia',
   standalone: true,
   imports: [
-    Header
+    Header,
+    CommonModule,
+    FormsModule
   ],
   templateUrl: './addglicemia.html',
-  styleUrl: './addglicemia.css'
+  styleUrls: ['./addglicemia.css']
 })
 export class Addglicemia {
-  constructor(private router: Router) {}
+  nivel: number | null = null;
+  data: string = '';
+  hora: string = '';
+  historico: HistoricoItem[] = [];
+  resumoSelecionado: 'hoje' | 'semana' | 'mes' = 'hoje';
+  historicoFiltrado: HistoricoItem[] = [];
 
+
+  constructor(private glicemiaService: GlicemiaService) {
+    this.carregarHistorico();
+  }
+
+  adicionar() {
+    // Validação simples dos campos
+    if (!this.nivel || !this.data || !this.hora) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    // Recupera usuário logado do localStorage
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuario') || '{}');
+    if (!usuarioLogado.id) {
+      alert('Usuário não logado!');
+      return;
+    }
+
+    // Cria o objeto com a interface do backend
+    const dados: CadastroGlicemiaRequest = {
+      valorGlicemia: this.nivel,
+      dataGlicemia: this.data,
+      horaGlicemia: this.hora,
+      idUsuario: usuarioLogado.id
+    };
+
+    // Envia para o backend
+    this.glicemiaService.adicionarGlicemia(dados).subscribe({
+      next: () => {
+        alert('Glicemia adicionada com sucesso!');
+        this.nivel = null;
+        this.data = '';
+        this.hora = '';
+        this.carregarHistorico();
+      },
+      error: (err) => {
+        console.error('Erro ao adicionar glicemia:', err);
+        alert('Erro ao adicionar glicemia!');
+      }
+    });
+  }
+
+  carregarHistorico() {
+    this.glicemiaService.historicoRecente().subscribe({
+      next: (res: HistoricoItem[]) => {
+        // Adiciona status baseado no valor
+        this.historico = res.map(item => {
+          let status = '';
+          if (item.valorGlicemia < 140) {
+            status = 'Normal';
+          } else if (item.valorGlicemia >= 140 && item.valorGlicemia <= 199) {
+            status = 'Intolerância à glicose';
+          } else {
+            status = 'Diabetes';
+          }
+          return {...item, status};
+        });
+        // Atualiza o card de resumo
+        this.selecionarResumo(this.resumoSelecionado);
+      },
+      error: (err) => console.error('Erro ao carregar histórico:', err)
+    });
+  }
+
+  selecionarResumo(periodo: 'hoje' | 'semana' | 'mes') {
+    this.resumoSelecionado = periodo;
+    const hoje = new Date();
+
+    this.historicoFiltrado = this.historico.filter(item => {
+      const dataItem = new Date(item.dataGlicemia);
+
+      switch (periodo) {
+        case 'hoje':
+          const dataFormatadaItem = dataItem.toISOString().slice(0, 10);
+          const dataFormatadaHoje = hoje.toISOString().slice(0, 10);
+          return dataFormatadaItem === dataFormatadaHoje;
+
+        case 'semana':
+          const inicioSemana = new Date(hoje);
+          inicioSemana.setDate(hoje.getDate() - hoje.getDay());
+          const fimSemana = new Date(inicioSemana);
+          fimSemana.setDate(inicioSemana.getDate() + 6);
+          inicioSemana.setHours(0, 0, 0, 0);
+          fimSemana.setHours(23, 59, 59, 999);
+          return dataItem >= inicioSemana && dataItem <= fimSemana;
+
+        case 'mes':
+          return (
+            dataItem.getMonth() === hoje.getMonth() &&
+            dataItem.getFullYear() === hoje.getFullYear()
+          );
+      }
+    });
+  }
 }

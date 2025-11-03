@@ -15,7 +15,8 @@ export class UsuarioService {
 
   // Salva o usuário logado no localStorage
   salvarUsuarioLocal(usuario: any) {
-    localStorage.setItem('usuario', JSON.stringify(usuario));
+    localStorage.setItem('usuario', JSON.stringify({id: usuario.id,
+      email: usuario.email}));
   }
 
   // Recupera o usuário logado

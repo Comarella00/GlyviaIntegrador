@@ -33,7 +33,7 @@ export class Login {
       next: (res) => {
         // Salva o usuário logado no localStorage
         this.usuarioService.salvarUsuarioLocal({
-          idUsuario: res.idUsuario,
+          id: res.id,
           email: res.email
         });
 
