@@ -56,7 +56,7 @@ export class Perguntas {
     this.cadastroService.salvarPerguntas().subscribe({
       next: () => {
         alert('Dados salvos com sucesso!');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         console.error('Erro ao salvar perguntas:', err);
