@@ -201,3 +201,53 @@ body {
   margin-top: 15px;
   cursor: pointer;
 }
+
+.info-glicemia {
+  margin-top: 10px;
+  text-align: center;
+  color: #b30000; /* vermelho forte */
+  font-size: 18px;
+  background-color: #eef5ff; /* leve fundo rosado */
+  border: 1px solid #eef5ff;
+  border-radius: 20px;
+  padding: 10px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
+}
+
+.info-glicemia p {
+  margin-bottom: 8px;
+}
+
+.info-glicemia ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-glicemia li {
+  margin: 4px 0;
+}
+.statuscores{
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+ .baixa{
+   background: #fff9c4;
+   color: #f9a825;
+
+ }
+ .normal{
+   background: #c8f7c5;
+   color: #2e7d32;
+
+ }
+.alta{
+  background: #f8d7da;
+  color: #c62828;
+}
