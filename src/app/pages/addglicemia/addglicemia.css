@@ -341,4 +341,29 @@ body {
   border: 1px solid #eef5ff;
   border-radius: 20px;
 }
+.historicoRecente {
+  display: flex;
+  flex-direction: column;
+  height: 500px; /* Altura fixa do card */
+  overflow: hidden;
+}
 
+.listaHistorico {
+  flex: 1;
+  overflow-y: auto; /* Ativa o scroll vertical */
+  padding-right: 10px; /* espaço pro scroll não sobrepor o texto */
+}
+
+/* Barra de rolagem estilizada (opcional e bonito) */
+.listaHistorico::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listaHistorico::-webkit-scrollbar-thumb {
+  background-color: #ff7f50; /* cor laranja suave */
+  border-radius: 4px;
+}
+
+.listaHistorico::-webkit-scrollbar-thumb:hover {
+  background-color: #ff4500; /* cor mais escura no hover */
+}

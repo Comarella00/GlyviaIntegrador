@@ -41,24 +41,24 @@
     <div class="headerHistorico">
       <h2>Histórico Recente</h2>
     </div>
-
-    <div class="item" *ngFor="let item of historico | slice:0:4">
-      <button class="btnEditarItem" (click)="editar(item)">
-        <img src="../../../icons/pencil.png" alt="Editar" />
-      </button>
-      <div class="valor">{{ item.valorGlicemia }} mg/dL</div>
-      <div class="hora">{{ item.horaGlicemia }}</div>
-      <div
-        class="status"
-        [ngClass]="{
-          verde: item.status === 'Normal',
-          amarelo: item.status === 'Glicemia Baixa',
-          vermelho: item.status === 'Glicemia Alta'
-        }"
-      >
-        {{ item.status }}
+    <div class="listaHistorico">
+      <div class="item" *ngFor="let item of historico ">
+          <button class="btnEditarItem" (click)="editar(item)">
+            <img src="../../../icons/pencil.png" alt="Editar" />
+          </button>
+          <div class="valor">{{ item.valorGlicemia }} mg/dL</div>
+          <div class="hora">{{ item.horaGlicemia }}</div>
+        <div
+          class="status"
+          [ngClass]="{
+            verde: item.status === 'Normal',
+            amarelo: item.status === 'Glicemia Baixa',
+            vermelho: item.status === 'Glicemia Alta'
+          }"
+        >
+          {{ item.status }}
+        </div>
       </div>
-
     </div>
   </div>
 
