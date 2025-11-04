@@ -74,12 +74,12 @@ export class Addglicemia {
         // Adiciona status baseado no valor
         this.historico = res.map(item => {
           let status = '';
-          if (item.valorGlicemia < 140) {
+          if (item.valorGlicemia >= 70 && item.valorGlicemia <= 150) {
             status = 'Normal';
-          } else if (item.valorGlicemia >= 140 && item.valorGlicemia <= 199) {
-            status = 'Intolerância à glicose';
+          } else if (item.valorGlicemia <= 70) {
+            status = 'Glicemia Baixa';
           } else {
-            status = 'Diabetes';
+            status = 'Glicemia Alta';
           }
           return {...item, status};
         });

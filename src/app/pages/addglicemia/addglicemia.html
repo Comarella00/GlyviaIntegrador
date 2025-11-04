@@ -47,8 +47,8 @@
         class="status"
         [ngClass]="{
           verde: item.status === 'Normal',
-          amarelo: item.status === 'Intolerância à glicose',
-          vermelho: item.status === 'Diabetes'
+          amarelo: item.status === 'Glicemia Baixa',
+          vermelho: item.status === 'Glicemia Alta'
         }"
       >
         {{ item.status }}
@@ -80,8 +80,8 @@
           class="status"
           [ngClass]="{
             verde: item.status === 'Normal',
-            amarelo: item.status === 'Intolerância à glicose',
-            vermelho: item.status === 'Diabetes'
+            amarelo: item.status === 'Glicemia Baixa',
+            vermelho: item.status === 'Glicemia Alta'
           }"
         >
           {{ item.status }}
