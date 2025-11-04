@@ -172,5 +172,15 @@ export class Addglicemia {
       }
     });
   }
+  cancelarEdicao() {
+    // Limpa os campos
+    this.nivel = null;
+    this.data = '';
+    this.hora = '';
+    this.idGlicemiaEditando = null;
+
+    // Sai do modo de edição
+    this.modoEdicao = false;
+  }
 
 }

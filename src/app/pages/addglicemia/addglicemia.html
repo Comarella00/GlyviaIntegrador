@@ -34,6 +34,10 @@
       (click)="modoEdicao ? salvarEdicao() : adicionar()">
       {{ modoEdicao ? 'Salvar Alterações' : 'Adicionar' }}
     </button>
+    <!-- Botão de Cancelar Edição -->
+    <button *ngIf="modoEdicao" class="btnCancelar" (click)="cancelarEdicao()">
+      Cancelar
+    </button>
   </div>
 
   <!-- COLUNA 2 - Histórico Recente -->

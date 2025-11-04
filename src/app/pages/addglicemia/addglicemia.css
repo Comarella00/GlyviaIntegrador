@@ -328,7 +328,7 @@ body {
 }
 
 .btnEditarAtivo:hover {
-  background-color: #e67e22 !important;
+  background-color: #ff4500 !important;
 }
 
 
@@ -366,4 +366,19 @@ body {
 
 .listaHistorico::-webkit-scrollbar-thumb:hover {
   background-color: #ff4500; /* cor mais escura no hover */
+}
+.btnCancelar {
+  margin-top: 10px;
+  background-color: #d9534f; /* vermelho suave */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 350px;
+  transition: background-color 0.3s ease;
+}
+
+.btnCancelar:hover {
+  background-color: #c9302c; /* vermelho mais escuro no hover */
 }
