@@ -36,4 +36,8 @@ export class GlicemiaService {
 
     return this.http.get<any[]>(`${this.apiUrl}/historicoRecente/${usuario.id}`);
   }
+  atualizarGlicemia(dados: any) {
+    return this.http.put('http://localhost:8080/Glyvia/glicemia/atualizarGlicemia', dados);
+  }
+
 }

@@ -25,6 +25,10 @@ export class Addglicemia {
   resumoSelecionado: 'hoje' | 'semana' | 'mes' = 'hoje';
   historicoFiltrado: HistoricoItem[] = [];
 
+  modoEdicao: boolean = false;
+  idGlicemiaEditando: number | null = null;
+
+
 
   constructor(private glicemiaService: GlicemiaService) {
     this.carregarHistorico();
@@ -99,8 +103,8 @@ export class Addglicemia {
 
       switch (periodo) {
         case 'hoje':
-          const dataFormatadaItem = dataItem.toISOString().slice(0, 10);
-          const dataFormatadaHoje = hoje.toISOString().slice(0, 10);
+          const dataFormatadaItem = dataItem.toISOString().slice(0, 11);
+          const dataFormatadaHoje = hoje.toISOString().slice(0, 11);
           return dataFormatadaItem === dataFormatadaHoje;
 
         case 'semana':
@@ -120,4 +124,53 @@ export class Addglicemia {
       }
     });
   }
+  // Quando o usuário clica no lápis
+  editar(item: HistoricoItem) {
+    this.modoEdicao = true;
+    this.idGlicemiaEditando = item.idGlicemia;
+
+    // Preenche os campos com os dados do item
+    this.nivel = item.valorGlicemia;
+    this.data = item.dataGlicemia;
+    this.hora = item.horaGlicemia;
+  }
+
+// Envia atualização para o backend
+  salvarEdicao() {
+    if (!this.idGlicemiaEditando || !this.nivel || !this.data || !this.hora) {
+      alert('Preencha todos os campos para editar.');
+      return;
+    }
+
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuario') || '{}');
+    if (!usuarioLogado.id) {
+      alert('Usuário não logado!');
+      return;
+    }
+
+    const dadosAtualizados = {
+      idGlicemia: this.idGlicemiaEditando,
+      valorGlicemia: this.nivel,
+      dataGlicemia: this.data,
+      horaGlicemia: this.hora,
+      idUsuario: usuarioLogado.id
+    };
+
+    this.glicemiaService.atualizarGlicemia(dadosAtualizados).subscribe({
+      next: () => {
+        alert('Glicemia atualizada com sucesso!');
+        this.modoEdicao = false;
+        this.idGlicemiaEditando = null;
+        this.nivel = null;
+        this.data = '';
+        this.hora = '';
+        this.carregarHistorico();
+      },
+      error: (err) => {
+        console.error('Erro ao atualizar glicemia:', err);
+        alert('Erro ao atualizar glicemia!');
+      }
+    });
+  }
+
 }

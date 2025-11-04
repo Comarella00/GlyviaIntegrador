@@ -304,3 +304,41 @@ body {
     padding: 5px;
   }
 }
+.btnAdicionar.editando {
+  background-color: #ff9800;
+}
+
+.btnAdicionar {
+  background-color: #2e7d32; /* verde padrão */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btnAdicionar:hover {
+  background-color: #2e7d32;
+}
+
+.btnEditarAtivo {
+  background-color: #f39c12 !important; /* laranja */
+}
+
+.btnEditarAtivo:hover {
+  background-color: #e67e22 !important;
+}
+
+
+.btnEditarItem{
+  font-size: 1px;
+  background: #eef5ff;
+  width: 100%;
+  padding: 1px;
+  text-align: right;
+  border: 1px solid #eef5ff;
+  border-radius: 20px;
+}
+

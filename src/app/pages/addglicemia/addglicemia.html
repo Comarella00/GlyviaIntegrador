@@ -28,19 +28,24 @@
       <input id="hora" type="time" [(ngModel)]="hora" />
     </div>
 
-    <button class="btnAdicionar" (click)="adicionar()">Adicionar</button>
+    <button
+      class="btnAdicionar"
+      [ngClass]="{ 'btnEditarAtivo': modoEdicao }"
+      (click)="modoEdicao ? salvarEdicao() : adicionar()">
+      {{ modoEdicao ? 'Salvar Alterações' : 'Adicionar' }}
+    </button>
   </div>
 
   <!-- COLUNA 2 - Histórico Recente -->
   <div class="card historicoRecente">
     <div class="headerHistorico">
       <h2>Histórico Recente</h2>
-      <button class="btnEditar">
-        <img src="../../../icons/pencil.png" alt="Editar" />
-      </button>
     </div>
 
     <div class="item" *ngFor="let item of historico | slice:0:4">
+      <button class="btnEditarItem" (click)="editar(item)">
+        <img src="../../../icons/pencil.png" alt="Editar" />
+      </button>
       <div class="valor">{{ item.valorGlicemia }} mg/dL</div>
       <div class="hora">{{ item.horaGlicemia }}</div>
       <div
@@ -53,6 +58,7 @@
       >
         {{ item.status }}
       </div>
+
     </div>
   </div>
 
