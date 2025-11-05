@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <body>
 <div class="dashboardContainer">
   <div class="header">
@@ -6,38 +7,46 @@
   </div>
 
   <div class="cards">
+    <!-- Última glicemia -->
     <div class="card blue">
       <h4>Última glicemia</h4>
-      <p class="value">{{ ultimaGlicemia.valor }} mg/dL</p>
-      <small>{{ ultimaGlicemia.horario }}</small>
+      <p class="value">{{ ultimaGlicemia.valorGlicemia }} mg/dL</p>
+      <small>{{ ultimaGlicemia.horaGlicemia }}</small>
     </div>
 
+    <!-- Média de glicemia -->
     <div class="card gray">
       <h4>Média diária</h4>
       <p class="value">{{ mediaDiaria }} mg/dL</p>
     </div>
 
+    <!-- Próxima insulina (placeholder) -->
     <div class="card orange">
       <h4>Próxima insulina</h4>
-      <p class="value">{{ proximaInsulina }}</p>
+      <!-- <p class="value">{{ proximaInsulina || '—' }}</p> -->
       <small>UTC-3 (Horário de Brasília)</small>
     </div>
 
+    <!-- Status rápido -->
     <div class="card green">
       <h4>Status rápido</h4>
-      <p>
+      <p *ngIf="statusRapido; else foraFaixa">
         Está dentro da faixa alvo hoje
       </p>
+      <ng-template #foraFaixa>
+        <p>Está fora da faixa alvo hoje</p>
+      </ng-template>
     </div>
-  </div>
+  </div> <!-- ✅ FECHAMENTO da div.cards -->
 
+  <!-- Seções adicionais -->
   <div class="row">
     <div class="box blueBox">
       <div class="cardHeader">
         <h4>Alertas</h4>
       </div>
       <ul>
-        <li *ngFor="let alerta of alertas">{{ alerta }}</li>
+        <!-- <li *ngFor="let alerta of alertas">{{ alerta }}</li> -->
       </ul>
     </div>
 
@@ -52,11 +61,16 @@
   </div>
 
   <div class="footerBox">
-    <p>Você manteve {{ porcentagemIdeal }}% do tempo em faixa ideal nesta semana</p>
+    <!-- <p>Você manteve {{ porcentagemIdeal }}% do tempo em faixa ideal nesta semana</p> -->
     <div class="buttons">
       <button>Adicionar glicemia</button>
       <button>Registrar refeição</button>
     </div>
   </div>
 </div>
+
+<!-- Template para carregamento -->
+<ng-template #carregando>
+  <p class="value">Carregando...</p>
+</ng-template>
 </body>
