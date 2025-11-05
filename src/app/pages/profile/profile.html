@@ -83,7 +83,6 @@
             Nosso compromisso é apoiar cada passo da sua jornada, sempre com empatia e cuidado.
           </p>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
 
       <div class="notification">
@@ -97,7 +96,6 @@
             <strong>E-mail:</strong> contato@glyvia.org
           </p>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
     </div>
   </div>
@@ -118,7 +116,6 @@
           <strong>Idioma</strong>
           <p>Português - Brasil</p>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
 
       <div class="notification">
@@ -127,9 +124,11 @@
         </div>
         <div>
           <strong>Tema</strong>
-          <p>Claro</p>
+          <p>{{ themeService.isDarkTheme() ? 'Escuro' : 'Claro' }}</p>
+          <button class="theme-toggle-btn" (click)="toggleTheme()">
+            {{ themeService.isDarkTheme() ? '☀️ Modo Claro' : '🌙 Modo Escuro' }}
+          </button>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
 
       <div class="notification">
@@ -141,7 +140,6 @@
           <p>Última versão: 1.0v</p>
           <p>Data da última atualização: Indefinido</p>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
 
       <div class="notification">
@@ -152,7 +150,6 @@
           <strong>Desenvolvido por</strong>
           <p>Projeto Glyvia</p>
         </div>
-        <button class="closeBtn">✕</button>
       </div>
     </div>
   </div>
