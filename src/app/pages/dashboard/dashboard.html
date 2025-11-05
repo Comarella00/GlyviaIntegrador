@@ -26,7 +26,6 @@
     <div class="card green">
       <h4>Status rápido</h4>
       <p>
-        <span class="statusIcon">👍</span>
         Está dentro da faixa alvo hoje
       </p>
     </div>
@@ -34,14 +33,18 @@
 
   <div class="row">
     <div class="box blueBox">
-      <h4>Alertas</h4>
+      <div class="cardHeader">
+        <h4>Alertas</h4>
+      </div>
       <ul>
         <li *ngFor="let alerta of alertas">{{ alerta }}</li>
       </ul>
     </div>
 
     <div class="box lightBlueBox">
-      <h4>Marcações do Dia da Glicemia</h4>
+      <div class="cardHeader">
+        <h4>Marcações do Dia da Glicemia</h4>
+      </div>
       <div class="graficoPlaceholder">
         (Gráfico aqui)
       </div>
@@ -51,8 +54,8 @@
   <div class="footerBox">
     <p>Você manteve {{ porcentagemIdeal }}% do tempo em faixa ideal nesta semana</p>
     <div class="buttons">
-      <button>➕ Adicionar glicemia</button>
-      <button>🍽️ Registrar refeição</button>
+      <button>Adicionar glicemia</button>
+      <button>Registrar refeição</button>
     </div>
   </div>
 </div>

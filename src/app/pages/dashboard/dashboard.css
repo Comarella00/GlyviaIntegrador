@@ -22,14 +22,14 @@ body {
 }
 
 .cards {
+  margin-bottom: 10px;
   display: flex;
-  gap: 16px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .card {
   flex: 1;
-  min-width: 200px;
   padding: 10px;
   border-radius: 10px;
   color: #fff;
@@ -63,25 +63,38 @@ body {
 .row {
   display: flex;
   gap: 16px;
-  margin-top: 20px;
   flex-wrap: wrap;
+}
+
+.row h4{
+  margin: 0 0 8px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  background: #2f8eff;
+  padding: 15px 20px; /* altura interna do header */
+  border-radius: 15px 15px 0 0; /* mantém cantos arredondados no topo */
+  margin-top: -16px;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .box {
   flex: 1;
   min-width: 280px;
   padding: 16px;
-  border-radius: 10px;
+  border-radius: 15px 15px 0 0;
   background: #fff;
+
 }
 
 .box h4 {
-  margin-bottom: 12px;
-  color: #1f5da6;
+  color: white;
 }
 
 .graficoPlaceholder {
-  background: #eaeaea;
   height: 150px;
   border-radius: 8px;
   display: flex;
@@ -91,15 +104,14 @@ body {
 }
 
 .footerBox {
-  margin-top: 20px;
-  padding: 16px;
+  margin-top: 10px;
+  padding: 15px;
   background: #fff;
   border-radius: 10px;
   text-align: center;
 }
 
 .footerBox p {
-  margin-bottom: 12px;
   font-weight: bold;
   color: #1f5da6;
 }
