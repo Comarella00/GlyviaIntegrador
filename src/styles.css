@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Tema claro */
+  --bg-color: #ffffff;
+  --primary-color: #78aee9;
+  --secondary-color: #bcd2ef;
+  --section-header: #3b7ec2;
+  --section-header-hover: #468fd3;
+  --text-color: #222222;
+  --card-color: #e5e8eb;
+  --notification-bg: #d8e3f0;
+  --logout-btn: #f47920;
+  --logout-btn-hover: #f36500;
+}
+
+.dark-theme {
+  /* Tema escuro */
+  --bg-color: #121212;
+  --primary-color: #1e2a3a;
+  --secondary-color: #2a3b54;
+  --section-header: #436799;
+  --section-header-hover: #557bb5;
+  --text-color: #f1f1f1;
+  --card-color: #2c3e50;
+  --notification-bg: #3b4b60;
+  --logout-btn: #f47920;
+  --logout-btn-hover: #ff934a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Botões padrão */
+button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e36a10;
+}
+
+/* Cards, containers, headers */
+.card,
+.section,
+.formBox,
+.profileContainer {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sectionHeader {
+  background-color: var(--color-secondary);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}

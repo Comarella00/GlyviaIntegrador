@@ -1,8 +1,9 @@
 body {
-  background-color: #d9d9d9;
+  background-color: var(--bg-color);
   min-height: 100vh;
   padding: 0;
   margin: -10px;
+  color: var(--text-color);
 }
 
 .dashboardContainer {
@@ -12,7 +13,7 @@ body {
 }
 
 .header h2 {
-  background-color: #4c7bb2;
+  background-color: var(--section-header);
   margin: -10px -15px 20px;
   color: white;
   font-size: 20px;
@@ -32,7 +33,7 @@ body {
   flex: 1;
   padding: 10px;
   border-radius: 10px;
-  color: #fff;
+  color: white;
 }
 
 .card h4 {
@@ -44,20 +45,21 @@ body {
   font-weight: bold;
 }
 
+/* As cores abaixo usam variáveis para adaptar ao tema */
 .blue {
-  background: #1f5da6;
+  background: var(--section-header);
 }
 
 .gray {
-  background: #777;
+  background: var(--secondary-color);
 }
 
 .orange {
-  background: #ff6600;
+  background: var(--logout-btn);
 }
 
 .green {
-  background: #28a745;
+  background: #28a745; /* você pode criar var(--success-color) se quiser */
 }
 
 .row {
@@ -66,19 +68,20 @@ body {
   flex-wrap: wrap;
 }
 
-.row h4{
+.row h4 {
   margin: 0 0 8px;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  background: #2f8eff;
-  padding: 15px 20px; /* altura interna do header */
-  border-radius: 15px 15px 0 0; /* mantém cantos arredondados no topo */
+  background: var(--primary-color);
+  padding: 15px 20px;
+  border-radius: 15px 15px 0 0;
   margin-top: -16px;
   margin-left: -16px;
   margin-right: -16px;
+  color: white;
 }
 
 .box {
@@ -86,12 +89,12 @@ body {
   min-width: 280px;
   padding: 16px;
   border-radius: 15px 15px 0 0;
-  background: #fff;
-
+  background: var(--card-color);
+  color: var(--text-color);
 }
 
 .box h4 {
-  color: white;
+  color: var(--text-color);
 }
 
 .graficoPlaceholder {
@@ -100,20 +103,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: var(--text-color);
+  background: var(--secondary-color);
 }
 
 .footerBox {
   margin-top: 10px;
   padding: 15px;
-  background: #fff;
+  background: var(--card-color);
   border-radius: 10px;
   text-align: center;
+  color: var(--text-color);
 }
 
 .footerBox p {
   font-weight: bold;
-  color: #1f5da6;
+  color: var(--section-header);
 }
 
 .buttons {
@@ -128,14 +133,14 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #1f5da6;
-  color: #fff;
+  background: var(--section-header);
+  color: white;
   font-weight: bold;
   transition: 0.2s;
 }
 
 .buttons button:hover {
-  background: #144070;
+  background: var(--section-header-hover);
 }
 
 @media (max-width: 768px) {

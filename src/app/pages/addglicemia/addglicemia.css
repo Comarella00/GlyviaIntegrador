@@ -1,12 +1,13 @@
+
+
 body {
-  background-color: #f0f0f0;
+  background-color: var(--bg-color);
   min-height: 100vh;
   padding: 0;
   margin: -10px;
 }
-
 .header h2 {
-  background-color: #4c7bb2;
+  background-color: var(--section-header);
   margin: -10px -15px 20px;
   color: white;
   font-size: 20px;
@@ -24,15 +25,16 @@ body {
 }
 
 .card {
-  background: #ffffff;
+  background: var(--card-color);
   border-radius: 15px;
   padding: 20px;
   flex: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
 }
 
 .card h2 {
-  color: white;
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 
@@ -42,7 +44,7 @@ body {
 }
 
 .addGlicemia h2 {
-  color: white;
+  color: var(--text-color);
   margin: 0;
   font-size: 1.2rem;
 }
@@ -51,7 +53,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2f8eff;
+  background: var(--primary-color);
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
 }
@@ -63,6 +65,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 8px;
+  background-color: var(--card-color);
 }
 
 .inputGroup input {
@@ -70,11 +73,13 @@ body {
   border: none;
   outline: none;
   font-size: 14px;
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .inputGroup span {
   margin-left: 5px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .icon {
@@ -101,7 +106,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2f8eff;
+  background: var(--primary-color);
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
 }
@@ -111,7 +116,7 @@ body {
 }
 
 .headerHistorico h2 {
-  color: white;
+  color: var(--text-color);
   margin: 0;
   font-size: 1.2rem;
 }
@@ -119,8 +124,9 @@ body {
 .item {
   margin-top: 10px;
   padding: 10px;
-  background: #eef5ff;
+  background: var(--secondary-color);
   border-radius: 10px;
+  color: var(--text-color);
 }
 
 .item .valor {
@@ -174,14 +180,15 @@ body {
 
 .tab {
   border: none;
-  background: #e0e0e0;
+  background: var(--secondary-color);
   border-radius: 8px;
   padding: 6px 12px;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .tab.ativo {
-  background: #1976d2;
+  background: var(--primary-color);
   color: white;
 }
 
@@ -192,7 +199,7 @@ body {
 }
 
 .btnPdf {
-  background: #1976d2;
+  background: var(--section-header);
   color: white;
   border: none;
   border-radius: 8px;
@@ -334,11 +341,11 @@ body {
 
 .btnEditarItem{
   font-size: 1px;
-  background: #eef5ff;
+  background: var(--secondary-color);
   width: 100%;
   padding: 1px;
   text-align: right;
-  border: 1px solid #eef5ff;
+  border: 1px solid transparent;
   border-radius: 20px;
 }
 .historicoRecente {

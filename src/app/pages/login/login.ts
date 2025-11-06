@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {UsuarioService} from '../../services/usuario.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { UsuarioService } from '../../services/usuario.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.html',
-  imports: [
-    FormsModule,
-    CommonModule
-  ],
+  imports: [FormsModule, CommonModule],
   styleUrls: ['./login.css']
 })
-
 export class Login {
   email: string = '';
   senha: string = '';
-  constructor(private router: Router, private usuarioService: UsuarioService) {}
+
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService,
+    private themeService: ThemeService
+  ) {}
 
   navigateCadastro() {
     this.router.navigate(['/cadastro']);
@@ -31,11 +33,15 @@ export class Login {
   navigateDashboard() {
     this.usuarioService.login(this.email, this.senha).subscribe({
       next: (res) => {
-        // Salva o usuário logado no localStorage
+        // Salva usuário logado
         this.usuarioService.salvarUsuarioLocal({
           id: res.id,
-          email: res.email
+          email: res.email,
+          temaPreferido: res.temaPreferido // garante que venha do backend
         });
+
+        // 🔹 Aplica o tema específico do usuário
+        this.themeService.applyUserTheme(res.temaPreferido || 'light', res.id);
 
         alert('Login realizado com sucesso!');
         this.router.navigate(['/dashboard']);
