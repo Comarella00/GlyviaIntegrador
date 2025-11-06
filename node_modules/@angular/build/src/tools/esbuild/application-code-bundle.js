@@ -487,7 +487,7 @@ function getEsBuildCommonPolyfillsOptions(options, namespace, tryToResolvePolyfi
         needLocaleDataPlugin = true;
     }
     if (needLocaleDataPlugin) {
-        buildOptions.plugins.push((0, i18n_locale_plugin_1.createAngularLocaleDataPlugin)());
+        buildOptions.plugins.unshift((0, i18n_locale_plugin_1.createAngularLocaleDataPlugin)());
     }
     if (polyfills.length === 0) {
         return;

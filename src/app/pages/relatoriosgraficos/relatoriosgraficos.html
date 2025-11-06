@@ -5,15 +5,11 @@
 </div>
 
 <div class="container">
-
-  <!-- Card Seleção -->
   <div class="card selecaoCard">
     <div class="headerCard">
       <h2>Selecione</h2>
     </div>
-
     <div class="conteudo">
-      <!-- Tipo de Visualização -->
       <div class="campo">
         <div class="toggle">
           <button
@@ -30,46 +26,76 @@
         </div>
       </div>
 
-      <!-- Tipo de Dado -->
       <div class="campo">
         <label>Tipo de Dado:</label>
-        <select>
+        <select [(ngModel)]="tipoDado">
           <option>Glicemia</option>
-          <option>Pressão</option>
           <option>Colesterol</option>
+          <option>Calorias</option>
+          <option>Carboidratos</option>
         </select>
       </div>
 
-      <!-- Período -->
       <div class="campo">
         <label>Período:</label>
         <div class="datas">
           <div>
             <label>De:</label>
-            <input type="date">
+            <input type="date" [(ngModel)]="dataInicio">
           </div>
           <div>
             <label>Até:</label>
-            <input type="date">
+            <input type="date" [(ngModel)]="dataFim">
           </div>
         </div>
       </div>
 
       <div class="botaoContainer">
-        <button class="btnBuscar">Buscar</button>
+        <button class="btnBuscar" (click)="buscar()">Buscar</button>
       </div>
     </div>
   </div>
 
-  <!-- Card Resultados -->
   <div class="card resultadoCard">
     <div class="headerCard">
       <h2>Resultados</h2>
     </div>
     <div class="conteudo">
-      <p style="text-align:center; margin-top:50px;">
+
+      <p *ngIf="!relatorio || relatorio.length === 0" style="text-align:center; margin-top:50px;">
         Informe os Dados e clique em Buscar!
       </p>
+
+      <!-- Relatório -->
+      <div *ngIf="toggleAtivo === 'relatorio' && relatorio && relatorio.length > 0">
+        <table class="tabela-relatorio">
+          <thead>
+          <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Valor</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of relatorio">
+            <td>{{ item.dataGlicemia | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ item.horaGlicemia }}</td>
+            <td>{{ item.valorGlicemia }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Gráfico -->
+      <div *ngIf="toggleAtivo === 'grafico'">
+        <canvas baseChart
+                [data]="chartData"
+                [options]="chartOptions"
+                chartType="line">
+        </canvas>
+      </div>
+
+
     </div>
   </div>
 

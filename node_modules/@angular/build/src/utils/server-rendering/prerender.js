@@ -19,6 +19,7 @@ const worker_pool_1 = require("../worker-pool");
 const utils_1 = require("./esm-in-memory-loader/utils");
 const manifest_1 = require("./manifest");
 const models_1 = require("./models");
+const utils_2 = require("./utils");
 async function prerenderPages(workspaceRoot, baseHref, appShellOptions, prerenderOptions, outputFiles, assets, outputMode, sourcemap = false, maxThreads = 1) {
     const outputFilesForWorker = {};
     const serverBundlesSourceMaps = new Map();
@@ -137,7 +138,7 @@ async function renderPages(baseHref, sourcemap, serializableRouteTreeNode, maxTh
                 : route;
             const outPath = node_path_1.posix.join(removeLeadingSlash(routeWithoutBaseHref), 'index.html');
             if (typeof redirectTo === 'string') {
-                output[outPath] = { content: generateRedirectStaticPage(redirectTo), appShellRoute: false };
+                output[outPath] = { content: (0, utils_2.generateRedirectStaticPage)(redirectTo), appShellRoute: false };
                 continue;
             }
             const render = renderWorker.run({ url: route });
@@ -240,28 +241,4 @@ function addTrailingSlash(url) {
 }
 function removeLeadingSlash(value) {
     return value[0] === '/' ? value.slice(1) : value;
-}
-/**
- * Generates a static HTML page with a meta refresh tag to redirect the user to a specified URL.
- *
- * This function creates a simple HTML page that performs a redirect using a meta tag.
- * It includes a fallback link in case the meta-refresh doesn't work.
- *
- * @param url - The URL to which the page should redirect.
- * @returns The HTML content of the static redirect page.
- */
-function generateRedirectStaticPage(url) {
-    return `
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirecting</title>
-    <meta http-equiv="refresh" content="0; url=${url}">
-  </head>
-  <body>
-    <pre>Redirecting to <a href="${url}">${url}</a></pre>
-  </body>
-</html>
-`.trim();
 }

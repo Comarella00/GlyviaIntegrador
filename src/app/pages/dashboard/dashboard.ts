@@ -4,6 +4,7 @@ import { DashboardService } from '../../services/dashboard.service';
 import { UsuarioService } from '../../services/usuario.service';
 import { forkJoin } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,8 @@ export class Dashboard {
 
   constructor(
     private dashboardService: DashboardService,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -54,5 +56,13 @@ export class Dashboard {
         console.error('Erro ao carregar dashboard:', err);
       }
     });
+  }
+
+  navigateAddglicemia() {
+    this.router.navigate(['/addglicemia']);
+  }
+
+  navigateContarcarboidratos() {
+    this.router.navigate(['/contarcarboidratos']);
   }
 }
