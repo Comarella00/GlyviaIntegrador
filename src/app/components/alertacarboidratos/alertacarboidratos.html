@@ -1,8 +1,10 @@
 <div class="overlay">
-  <div class="alertBox">
+  <div class="alertBox" [ngClass]="temaAtual">
     <img src="icons/warning.png" alt="Alerta" class="alertIcon">
     <h2>ATENÇÃO</h2>
     <p>{{ mensagem }}</p>
-    <button class="btnFechar" (click)="fecharAlerta()">Fechar</button>
+    <div class="botoes">
+      <button class="btnOk" (click)="fecharAlerta()">OK, Prosseguir</button>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .header h2 {
-  background-color: #4C7BB2;
+  background-color: var(--section-header);
   margin: -10px -15px 20px;
   color: white;
   font-size: 20px;
@@ -18,28 +18,32 @@
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Card geral */
 .card {
-  background: #ffffff;
+  background: var(--card-color);
   border-radius: 15px;
   padding: 0 0 20px 0; /* padding só inferior */
   flex: 0.3;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: var(--text-color);
 }
 
 /* Header do card azul */
 .headerCard {
   display: flex;
   align-items: center;
-  background: #2f8eff;
+  background: var(--primary-color);
   padding: 15px 20px;
   border-radius: 15px 15px 0 0;
 }
 
 .headerCard h2 {
-  color: white;
+  color: var(--text-color);
   margin: 0;
   font-size: 1.2rem;
 }
@@ -66,10 +70,12 @@
   position: relative;
   display: flex;
   gap: 5px;
-  background: #e0e0e0;
+  background: var(--secondary-color);
   border-radius: 8px;
   overflow: hidden;
   width: 200px; /* ajuste conforme necessário */
+  color: var(--text-color);
+  border: 1px solid #ccc;
 }
 
 .toggle button {
@@ -79,7 +85,7 @@
   background: transparent;
   cursor: pointer;
   z-index: 1;
-  color: gray;
+  color: var(--text-color);
   transition: color 0.3s;
   font-weight: bold;
 }
@@ -94,7 +100,7 @@
   top: 0;
   bottom: 0;
   width: 50%; /* metade do toggle */
-  background: #1976d2;
+  background: var(--section-header-hover);
   border-radius: 8px;
   transition: left 0.3s ease;
   z-index: 0;
@@ -105,6 +111,9 @@ input[type="text"], input[type="date"], select {
   padding: 8px 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  background: var(--card-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Datas lado a lado */
@@ -126,7 +135,7 @@ input[type="text"], input[type="date"], select {
 
 /* Botão Buscar */
 .btnBuscar {
-  background: #1976d2;
+  background: var(--section-header) ;
   color: white;
   border: none;
   border-radius: 8px;
@@ -137,7 +146,7 @@ input[type="text"], input[type="date"], select {
 }
 
 .btnBuscar:hover {
-  background: #1565c0;
+  background: var(--section-header-hover);
 }
 
 /* Card resultados maior */

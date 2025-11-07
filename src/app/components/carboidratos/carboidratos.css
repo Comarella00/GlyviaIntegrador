@@ -9,15 +9,16 @@
 
 .card {
   width: 350px;
-  background-color: #fff;
+  background-color: var(--card-color);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  color: var(--text-color);
 }
 
 .cardHeader {
-  background-color: #4285f4;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-weight: bold;
   padding: 10px 15px;
   font-size: 16px;
@@ -38,7 +39,7 @@
 .textContent p {
   margin: 0;
   font-size: 1rem;
-  color: #333;
+  color: var(--text-color);
 }
 
 .iconContainer img {
@@ -60,7 +61,7 @@
 .cardContent li {
   margin-bottom: 8px;
   font-size: 1rem;
-  color: #555;
+  color: var(--text-color);
 }
 
 @media (max-width: 600px) {

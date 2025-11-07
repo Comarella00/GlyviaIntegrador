@@ -1,5 +1,5 @@
 .header {
-  background-color: #1f5da6;
+  background-color: var(--primary);
   color: white;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@
   left: -250px;
   width: 250px;
   height: calc(100% - 60px);
-  background-color: #1f5da6;
+  background-color: var(--primary);
   transition: left 0.3s ease;
 }
 
