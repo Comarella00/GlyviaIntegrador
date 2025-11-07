@@ -2,57 +2,34 @@
 <body>
 <div class="profileContainer">
   <div class="userInfo">
-    <div class="photo"></div>
+    <div class="profileIcon">
+      <label for="fotoUpload" class="fotoLabel">
+        <img [src]="fotoUrl" alt="Foto de perfil" [class.uploading]="isUploading" />
+      </label>
+      <input
+        id="fotoUpload"
+        type="file"
+        accept="image/png, image/jpeg, image/jpg"
+        (change)="onFotoSelecionada($event)"
+        style="display: none;"
+      />
+    </div>
+
     <div class="info">
-      <div class="userName">NOME DO USUÁRIO</div>
-      <div class="userDesc">
-        Informações que foram colocadas junto ao mascote Glyvia na hora do cadastro
+      <div class="userName">{{ usuario?.nome }}</div>
+      <div class="userDesc info-row">
+        <div><strong>Gênero:</strong> {{ usuario?.genero }}</div>
+        <div><strong>Tipo Insulina:</strong> {{ usuario?.tipoInsulina }}</div>
+        <div><strong>Via Aplicação:</strong> {{ usuario?.viaAplicacao }}</div>
+        <div><strong>Peso:</strong> {{ usuario?.pesoAtual }} kg</div>
+        <div><strong>Altura:</strong> {{ usuario?.altura }}</div>
+        <div><strong>Meta Glicêmica:</strong> {{ usuario?.metaGlicemica }} mg/dL</div>
+        <div><strong>ICR:</strong> {{ usuario?.icr }}</div>
       </div>
     </div>
   </div>
 
-  <!-- BLOCO 1 - NOTIFICAÇÕES -->
-  <div class="section">
-    <div class="sectionHeader" (click)="toggleSection('notificacoes')">
-      <span>NOTIFICAÇÕES</span>
-      <span class="arrow">{{ openSection === 'notificacoes' ? '▾' : '▸' }}</span>
-    </div>
-
-    <div class="sectionContent" *ngIf="openSection === 'notificacoes'">
-      <div class="notification" *ngFor="let notificacao of notificacoes; let i = index">
-        <div class="icon" >
-          <img [src]="notificacao.icone" [alt]="notificacao.titulo" />
-        </div>
-        <div>
-          <strong>{{notificacao.titulo}}</strong>
-        </div>
-        <button class="closeBtn" (click)="removerNotificacao(i)">✕</button>
-      </div>
-
-      <!--
-      <div class="notification">
-        <div class="icon">
-          <img src="icons/sad-face.png" alt="Cara triste" />
-        </div>
-        <div>
-          <strong>Ficamos com saudades</strong>
-        </div>
-        <button class="closeBtn">✕</button>
-      </div>
-
-      <div class="notification">
-        <div class="icon">
-          <img src="icons/star.png" alt="Estrela" />
-        </div>
-        <div>
-          <strong>Dia de comemorar</strong>
-        </div>
-        <button class="closeBtn">✕</button>
-      </div>-->
-    </div>
-  </div>
-
-  <!-- BLOCO 2 - DADOS DA CONTA -->
+  <!-- BLOCO 1 - DADOS DA CONTA -->
   <div class="section">
     <div class="sectionHeader" (click)="toggleSection('conta')">
       <span>DADOS DA CONTA</span>
@@ -63,7 +40,7 @@
     </div>
   </div>
 
-  <!-- BLOCO 3 - SOBRE NÓS -->
+  <!-- BLOCO 2 - SOBRE NÓS -->
   <div class="section">
     <div class="sectionHeader" (click)="toggleSection('sobre')">
       <span>SOBRE NÓS</span>
@@ -100,7 +77,7 @@
     </div>
   </div>
 
-  <!-- BLOCO 4 - PREFERÊNCIAS DO APP -->
+  <!-- BLOCO 3 - PREFERÊNCIAS DO APP -->
   <div class="section">
     <div class="sectionHeader" (click)="toggleSection('preferencias')">
       <span>PREFERÊNCIAS DO APP</span>

@@ -47,7 +47,7 @@ button {
 }
 
 button:hover {
-  background-color: #e36a10;
+  /* background-color: #e36a10; */
 }
 
 /* Cards, containers, headers */

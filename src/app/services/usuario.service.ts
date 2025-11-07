@@ -25,8 +25,15 @@ export class UsuarioService {
     return user ? JSON.parse(user) : null;
   }
 
-  // Remove o usuário (logout)
-  logout() {
-    localStorage.removeItem('usuario');
+  getUsuarioById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+  uploadFoto(id: number, foto: File) {
+    const formData = new FormData();
+    formData.append('foto', foto);
+    return this.http.post(`http://localhost:8080/Glyvia/usuario/${id}/foto`, formData, {
+      responseType: 'text'
+    });
   }
 }

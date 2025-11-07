@@ -4,6 +4,29 @@ body {
   margin: -10px;
 }
 
+.profileIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profileIcon img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--card-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.profileIcon img.uploading {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
 .profileContainer {
   background-color: var(--primary-color);
   min-height: 100vh;
@@ -21,29 +44,19 @@ body {
   margin-bottom: 20px;
 }
 
-.photo {
-  width: 70px;
-  height: 70px;
+.foto {
+  width: 5%;
+  height: 30px;
   border-radius: 50%;
-  background-color: var(--card-color);
-  margin-right: 15px;
   position: relative;
-}
-
-.photo::before {
-  content: "📷";
-  position: absolute;
-  font-size: 28px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #999;
+  max-width: 10%;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-left: 10px;
 }
 
 .userName,
@@ -231,4 +244,9 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.info-row {
+  display: flex;
+  gap: 16px;
 }

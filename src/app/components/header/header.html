@@ -2,8 +2,10 @@
   <div class="left">
     <app-sidebar></app-sidebar>
     <div class="logo">
+      <button type="button" (click)="navigateDashboard()" >
       <img src="icons/Logo.png" alt="Logo" />
       <img src="icons/Glyvia.png" alt="Logo" />
+      </button>
     </div>
   </div>
 
@@ -21,7 +23,13 @@
       />
     </button>
     <button type="button" class="userBtn" (click)="goToProfile()">
-      <img src="icons/Default_Profile.png" alt="Usuário" class="userIcon" />
+      <img
+        [src]="fotoUrl"
+        alt="Usuário"
+        class="userIcon"
+        (error)="fotoUrl = 'icons/Default_Profile.png'"
+      />
     </button>
+
   </div>
 </header>
