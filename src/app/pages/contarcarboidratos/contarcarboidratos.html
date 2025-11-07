@@ -18,4 +18,9 @@
       (reenviarImagem)="onReenviarImagem()">
     </app-resumorefeicao>
   </div>
+  <app-alertacarboidratos
+    *ngIf="mostrarAlerta"
+    [mensagem]="'A FOTO PRECISA SER TIRADA ANTES'"
+    (fechar)="fecharAlerta()">
+  </app-alertacarboidratos>
 </div>
