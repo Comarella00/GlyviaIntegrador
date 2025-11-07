@@ -51,7 +51,8 @@ body {
 }
 
 .gray {
-  background: var(--secondary-color);
+  background: var(--primary);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .orange {

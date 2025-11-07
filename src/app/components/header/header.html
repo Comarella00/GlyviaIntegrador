@@ -7,7 +7,21 @@
     </div>
   </div>
 
-  <button type="button" class="userBtn" (click)="goToProfile()">
-    <img src="icons/Default_Profile.png" alt="Usuário" class="userIcon" />
-  </button>
+  <div class="right">
+    <button type="button" class="themeBtn" (click)="toggleTheme()">
+      <img
+        *ngIf="!themeService.isDarkTheme()"
+        src="icons/modoescuro.png"
+        alt="Ativar modo escuro"
+      />
+      <img
+        *ngIf="themeService.isDarkTheme()"
+        src="icons/modoclaro.png"
+        alt="Ativar modo claro"
+      />
+    </button>
+    <button type="button" class="userBtn" (click)="goToProfile()">
+      <img src="icons/Default_Profile.png" alt="Usuário" class="userIcon" />
+    </button>
+  </div>
 </header>

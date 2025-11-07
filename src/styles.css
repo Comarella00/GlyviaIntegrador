@@ -3,13 +3,14 @@
   --bg-color: #ffffff;
   --primary-color: #78aee9;
   --secondary-color: #bcd2ef;
-  --section-header: #3b7ec2;
+  --section-header: #4C7BB2;
   --section-header-hover: #468fd3;
   --text-color: #222222;
   --card-color: #e5e8eb;
   --notification-bg: #d8e3f0;
   --logout-btn: #f47920;
   --logout-btn-hover: #f36500;
+  --primary:#1f5da6;
 }
 
 .dark-theme {
@@ -24,6 +25,7 @@
   --notification-bg: #3b4b60;
   --logout-btn: #f47920;
   --logout-btn-hover: #ff934a;
+  --primary:#2a3b54;
 }
 
 body {
