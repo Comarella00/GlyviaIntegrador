@@ -4,11 +4,12 @@ import { Carboidratos } from '../../components/carboidratos/carboidratos';
 import { Resumorefeicao } from '../../components/resumorefeicao/resumorefeicao';
 import { Alertacarboidratos } from '../../components/alertacarboidratos/alertacarboidratos';
 import { Header } from '../../components/header/header';
+import {Addcarbomanualmente} from '../../components/addcarbomanualmente/addcarbomanualmente';
 
 @Component({
   selector: 'app-contarcarboidratos',
   standalone: true,
-  imports: [CommonModule, Header, Carboidratos, Resumorefeicao, Alertacarboidratos],
+  imports: [CommonModule, Header, Carboidratos, Resumorefeicao, Alertacarboidratos, Addcarbomanualmente],
   templateUrl: './contarcarboidratos.html',
   styleUrls: ['./contarcarboidratos.css']
 })

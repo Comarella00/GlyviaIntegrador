@@ -20,6 +20,7 @@ import {Mainremedios} from './components/mainremedios/mainremedios';
 import {Mainconsultas} from './components/mainconsultas/mainconsultas';
 import {Alertas} from './pages/alertas/alertas';
 import {Alertaslembretes} from './components/alertaslembretes/alertaslembretes';
+import {Addcarbomanualmente} from './components/addcarbomanualmente/addcarbomanualmente';
 
 export const routes: Routes = [
   { path: '', component: Login },
@@ -43,6 +44,7 @@ export const routes: Routes = [
   { path: 'mainconsultas', component: Mainconsultas},
   { path: 'alertas', component: Alertas},
   { path: 'alertaslembretes', component: Alertaslembretes},
+  { path: 'addcarbomanualmente', component: Addcarbomanualmente},
   { path: '**', redirectTo: '' },
 ];
 

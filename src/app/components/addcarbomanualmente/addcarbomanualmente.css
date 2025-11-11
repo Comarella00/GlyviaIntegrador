@@ -1,0 +1,143 @@
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.card {
+  width: 350px;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+.cardContent input {
+  width: 100%;
+  padding: 6px 0;
+  background: transparent;
+  outline: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+.cardContent input::placeholder {
+  color: #999;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.cardContent input:focus {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.inputGroup input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.cardHeader {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.containerCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.textContent p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.iconContainer img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.iconContainer img:hover {
+  transform: scale(1.1);
+}
+
+.cardContent ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.cardContent li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .containerCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iconContainer {
+    margin-top: 15px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* alinha os campos à esquerda */
+  justify-content: center;
+  gap: 10px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+button {
+  margin: 15px auto 0 auto; /* centraliza horizontalmente */
+  padding: 10px 30px;
+  background-color: #f47920;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #f36500;
+}
+
+button:disabled {
+  background-color: #b5b5b5;
+  cursor: not-allowed;
+}

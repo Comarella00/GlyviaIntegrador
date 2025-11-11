@@ -5,22 +5,37 @@
     <h2>Contar Carboidratos</h2>
   </div>
 
-  <!--Card de enviar Foto e Dicas -->
-  <app-carboidratos
-    *ngIf="!fotoProcessada"
-    (fotoProcessada)="onFotoProcessada($event)">
-  </app-carboidratos>
+  <div class="cards-section">
+    <!-- Cards de enviar Foto e Dicas -->
+    <div class="left-section">
+      <app-carboidratos
+        *ngIf="!fotoProcessada"
+        (fotoProcessada)="onFotoProcessada($event)">
+      </app-carboidratos>
 
-  <!-- Mostra o resumo apenas depois que a foto for processada -->
-  <div class="main-container" *ngIf="fotoProcessada">
-    <app-resumorefeicao
-      [foto]="fotoProcessada"
-      (reenviarImagem)="onReenviarImagem()">
-    </app-resumorefeicao>
+      <!-- Mostra o resumo apenas depois que a foto for processada -->
+      <div class="main-container" *ngIf="fotoProcessada">
+        <app-resumorefeicao
+          [foto]="fotoProcessada"
+          (reenviarImagem)="onReenviarImagem()">
+        </app-resumorefeicao>
+      </div>
+
+      <app-alertacarboidratos
+        *ngIf="mostrarAlerta"
+        [mensagem]="'A FOTO PRECISA SER TIRADA ANTES'"
+        (fechar)="fecharAlerta()">
+      </app-alertacarboidratos>
+    </div>
+
+    <!-- OU -->
+    <div class="or">
+      <p>OU</p>
+    </div>
+
+    <!-- Card de adicionar manualmente -->
+    <div class="right-section">
+      <app-addcarbomanualmente></app-addcarbomanualmente>
+    </div>
   </div>
-  <app-alertacarboidratos
-    *ngIf="mostrarAlerta"
-    [mensagem]="'A FOTO PRECISA SER TIRADA ANTES'"
-    (fechar)="fecharAlerta()">
-  </app-alertacarboidratos>
 </div>

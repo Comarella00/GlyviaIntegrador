@@ -1,0 +1,39 @@
+<div class="cardsContainer">
+  <div class="card">
+    <div class="cardHeader">Adicionar Carboidratos Manualmente</div>
+    <div class="cardContent">
+      <p>Preencha os dados abaixo para registrar uma entrada de carboidratos.
+        Há um cálculo sugerido de insulina — apenas referência, consulte seu profissional de saúde.</p>
+
+      <form id="carbForm" novalidate>
+        <div>
+          <label for="descricao">Descrição:</label>
+          <input id="descricao" name="descricao" type="text" />
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="calorias">Calorias (kcal):</label>
+            <input id="calorias" name="calorias" type="number" min="0" step="1"/>
+          </div>
+          <div>
+            <label for="carboidratos">Carboidratos (g):</label>
+            <input id="carboidratos" name="carboidratos" type="number" min="0" step="0.1"/>
+          </div>
+          <div>
+            <label for="carboidratos">Insulina para Repor:</label>
+            <input id="carboidratos" name="carboidratos" type="number" min="0" step="0.1"/>
+          </div>
+          <div>
+            <label for="carboidratos">Data:</label>
+            <input id="carboidratos" name="carboidratos" type="date" min="0" step="0.1"/>
+          </div>
+          <div>
+            <label for="carboidratos">Hora:</label>
+            <input id="carboidratos" name="carboidratos" type="time" min="0" step="0.1"/>
+          </div>
+        </div>
+        <button id="button">Adicionar</button>
+      </form>
+    </div>
+  </div>
+</div>

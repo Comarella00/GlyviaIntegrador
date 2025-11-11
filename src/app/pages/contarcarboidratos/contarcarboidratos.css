@@ -1,9 +1,61 @@
+/* Mantém o header azul */
 .header h2 {
-  background-color: var(--section-header);
+  background-color: #4C7BB2;
   margin: -10px -15px 20px;
   color: white;
   font-size: 20px;
   padding-left: 5%;
   padding-top: 1.5%;
   padding-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Container principal dos cards */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Seção da esquerda (foto e dicas) */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Seção da direita (adicionar manualmente) */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* OU centralizado entre os cards */
+.or {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-top: 80px;
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .or {
+    margin-top: 0;
+  }
 }
