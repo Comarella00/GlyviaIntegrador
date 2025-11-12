@@ -23,6 +23,7 @@ export class Perguntas {
   altura: number | null = null;
   metaGlicemica: number | null = null;
   icr: number | null = null;
+  fs: number | null = null;
   dataNascimento = '';
 
   constructor(private router: Router, private cadastroService: CadastroService) {}
@@ -48,6 +49,7 @@ export class Perguntas {
       altura: this.altura,
       metaGlicemica: this.metaGlicemica,
       icr: this.icr,
+      fs: this.fs,
       dataNascimento: this.dataNascimento
     };
     this.cadastroService.setPerguntas(dados);

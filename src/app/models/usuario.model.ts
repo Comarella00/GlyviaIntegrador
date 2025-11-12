@@ -10,5 +10,6 @@ export interface Usuario {
   altura?: number;
   metaGlicemica?: number;
   icr?: number;
+  fs?: number;
   dataNascimento?: string;
 }

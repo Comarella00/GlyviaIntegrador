@@ -32,11 +32,11 @@ export class Addcarbomanualmente {
 
     this.refeicaoService.adicionarRefeicao(dados).subscribe({
       next: (res) => {
-        console.log('✅ Refeição adicionada:', res);
+        console.log('Refeição adicionada:', res);
         alert('Refeição adicionada com sucesso!');
       },
       error: (err) => {
-        console.error('❌ Erro ao adicionar refeição:', err);
+        console.error('Erro ao adicionar refeição:', err);
         alert('Erro ao adicionar refeição. Verifique os campos.');
       }
     });
