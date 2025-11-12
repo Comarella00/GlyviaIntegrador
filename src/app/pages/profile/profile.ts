@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -12,8 +12,7 @@ import { UsuarioService } from '../../services/usuario.service';
   templateUrl: './profile.html',
   styleUrls: ['./profile.css']
 })
-
-  export class Profile {
+export class Profile implements OnInit {
   openSection: string | null = null;
   showLogoutConfirm = false;
   usuarioId: number | null = null;
@@ -21,17 +20,13 @@ import { UsuarioService } from '../../services/usuario.service';
   fotoUrl: string = 'icons/profile-picture.png';
   isUploading = false;
 
-  notificacoes = [
-    { titulo: 'Resumo da semana', icone: 'icons/party-popper.png' },
-    { titulo: 'Ficamos com saudades', icone: 'icons/sad-face.png' },
-    { titulo: 'Dia de comemorar', icone: 'icons/star.png' }
-  ];
-
   constructor(
     private router: Router,
     public themeService: ThemeService,
     private usuarioService: UsuarioService
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     const user = localStorage.getItem('usuario');
 
     if (user) {
@@ -39,16 +34,24 @@ import { UsuarioService } from '../../services/usuario.service';
       this.usuarioId = usuario.id;
 
       if (this.usuarioId !== null) {
+        // Aplica o tema do usuário
         this.themeService.applyUserTheme(usuario.temaPreferido || 'light', this.usuarioId);
 
+        // 🔹 Busca dados atualizados do backend
         this.usuarioService.getUsuarioById(this.usuarioId).subscribe({
           next: (dados) => {
             this.usuario = dados;
             console.log('Usuário carregado:', this.usuario);
 
-            if (this.usuario.fotoPerfil) {
-              this.fotoUrl = `http://localhost:8080/Glyvia/usuario/${this.usuarioId}/foto`;
+            // 🔹 Monta URL da foto corretamente
+            if (this.usuario.fotoPerfil && this.usuario.fotoPerfil.trim() !== '') {
+              this.fotoUrl = `http://localhost:8080/Glyvia/usuario/${this.usuarioId}/foto?${new Date().getTime()}`;
+            } else {
+              this.fotoUrl = 'icons/profile-picture.png';
             }
+
+            // 🔹 Atualiza localStorage
+            localStorage.setItem('usuario', JSON.stringify(this.usuario));
           },
           error: (erro) => {
             console.error('Erro ao carregar dados do usuário:', erro);
@@ -58,21 +61,17 @@ import { UsuarioService } from '../../services/usuario.service';
     }
   }
 
-  //Upload da nova foto
-  onFotoSelecionada(event: any) {
+  // 🔹 Upload da nova foto de perfil
+  onFotoSelecionada(event: any): void {
     const arquivo: File = event.target.files[0];
     if (!arquivo) return;
 
-    //Tipos de imagem permitidos
     const tiposPermitidos = ['image/jpeg', 'image/png', 'image/jpg'];
-
-    //Validação do tipo MIME
     if (!tiposPermitidos.includes(arquivo.type)) {
       alert('Formato inválido. Envie apenas imagens JPG ou PNG.');
       return;
     }
 
-    //Validação do tamanho (ex: até 5 MB)
     const tamanhoMaximo = 5 * 1024 * 1024;
     if (arquivo.size > tamanhoMaximo) {
       alert('A imagem deve ter no máximo 5 MB.');
@@ -82,10 +81,22 @@ import { UsuarioService } from '../../services/usuario.service';
     if (this.usuarioId !== null) {
       this.isUploading = true;
 
+      // 🔹 Faz upload para o backend
       this.usuarioService.uploadFoto(this.usuarioId, arquivo).subscribe({
-        next: (res) => {
-          console.log('Foto enviada com sucesso:', res);
+        next: (nomeArquivo: string) => {
+          console.log('Foto enviada com sucesso:', nomeArquivo);
+
+          // 🔹 Atualiza o objeto usuário e salva localmente
+          this.usuario.fotoPerfil = nomeArquivo;
+          localStorage.setItem('usuario', JSON.stringify(this.usuario));
+
+          // 🔹 Atualiza URL da imagem (sem cache)
           this.fotoUrl = `http://localhost:8080/Glyvia/usuario/${this.usuarioId}/foto?${new Date().getTime()}`;
+
+          // 🔹 Atualiza preview no HTML
+          const img = document.querySelector<HTMLImageElement>('#fotoUploadPreview');
+          if (img) img.src = this.fotoUrl;
+
           this.isUploading = false;
         },
         error: (erro) => {
@@ -96,15 +107,15 @@ import { UsuarioService } from '../../services/usuario.service';
     }
   }
 
-  toggleSection(section: string) {
+  toggleSection(section: string): void {
     this.openSection = this.openSection === section ? null : section;
   }
 
-  logout() {
+  logout(): void {
     this.showLogoutConfirm = true;
   }
 
-  confirmLogout(decisao: boolean) {
+  confirmLogout(decisao: boolean): void {
     this.showLogoutConfirm = false;
 
     if (decisao) {
@@ -116,7 +127,7 @@ import { UsuarioService } from '../../services/usuario.service';
     }
   }
 
-  toggleTheme() {
+  toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UsuarioService {
@@ -8,32 +8,48 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  // Faz login no backend
   login(email: string, senha: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { email, senha });
   }
 
-  // Salva o usuário logado no localStorage
   salvarUsuarioLocal(usuario: any) {
-    localStorage.setItem('usuario', JSON.stringify({id: usuario.id,
-      email: usuario.email}));
+    const usuarioFormatado = {
+      id: usuario.id,
+      email: usuario.email,
+      nome: usuario.nome || '',
+      temaPreferido: usuario.temaPreferido || 'light',
+      fotoPerfil: usuario.fotoPerfil || ''
+    };
+    localStorage.setItem('usuario', JSON.stringify(usuarioFormatado));
   }
 
-  // Recupera o usuário logado
   obterUsuarioLocal() {
     const user = localStorage.getItem('usuario');
     return user ? JSON.parse(user) : null;
   }
 
   getUsuarioById(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get(`${this.apiUrl}/${id}`).pipe(
+      map((res: any) => {
+        // Garante que o campo fotoPerfil nunca venha undefined
+        return {
+          ...res,
+          fotoPerfil: res.fotoPerfil || ''
+        };
+      })
+    );
   }
 
-  uploadFoto(id: number, foto: File) {
+  uploadFoto(id: number, foto: File): Observable<string> {
     const formData = new FormData();
     formData.append('foto', foto);
-    return this.http.post(`http://localhost:8080/Glyvia/usuario/${id}/foto`, formData, {
+
+    return this.http.post(`${this.apiUrl}/${id}/foto`, formData, {
       responseType: 'text'
     });
+  }
+
+  getFotoUrl(id: number): string {
+    return `${this.apiUrl}/${id}/foto`;
   }
 }

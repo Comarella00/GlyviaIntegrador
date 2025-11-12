@@ -1,36 +1,20 @@
 <app-header></app-header>
 
 <div class="header">
-  <h2>Relatórios e Gráficos</h2>
+  <h2>Relatórios</h2>
 </div>
 
 <div class="container">
+  <!-- Card de seleção -->
   <div class="card selecaoCard">
     <div class="headerCard">
-      <h2>Selecione</h2>
+      <h2>Filtros</h2>
     </div>
     <div class="conteudo">
-      <div class="campo">
-        <div class="toggle">
-          <button
-            [class.ativo]="toggleAtivo === 'relatorio'"
-            (click)="setToggle('relatorio')">
-            Relatório
-          </button>
-          <button
-            [class.ativo]="toggleAtivo === 'grafico'"
-            (click)="setToggle('grafico')">
-            Gráfico
-          </button>
-          <div class="indicador" [ngStyle]="{'left': toggleAtivo === 'relatorio' ? '0%' : '50%'}"></div>
-        </div>
-      </div>
-
       <div class="campo">
         <label>Tipo de Dado:</label>
         <select [(ngModel)]="tipoDado">
           <option>Glicemia</option>
-          <option>Colesterol</option>
           <option>Calorias</option>
           <option>Carboidratos</option>
         </select>
@@ -56,47 +40,47 @@
     </div>
   </div>
 
+  <!-- Card de resultados -->
   <div class="card resultadoCard">
     <div class="headerCard">
       <h2>Resultados</h2>
     </div>
     <div class="conteudo">
 
-      <p *ngIf="!relatorio || relatorio.length === 0" style="text-align:center; margin-top:50px;">
-        Informe os Dados e clique em Buscar!
+      <!-- Estado inicial -->
+      <p *ngIf="!relatorio || relatorio.length === 0 && !carregando" style="text-align:center; margin-top:50px;">
+        Informe os dados e clique em <b>Buscar</b>!
+      </p>
+
+      <!-- Loading -->
+      <p *ngIf="carregando" style="text-align:center; margin-top:50px;">
+        Carregando...
       </p>
 
       <!-- Relatório -->
-      <div *ngIf="toggleAtivo === 'relatorio' && relatorio && relatorio.length > 0">
+      <div *ngIf="!carregando && relatorio && relatorio.length > 0">
         <table class="tabela-relatorio">
           <thead>
           <tr>
             <th>Data</th>
             <th>Hora</th>
-            <th>Valor</th>
+            <th *ngIf="tipoDado === 'Glicemia'">Glicemia (mg/dL)</th>
+            <th *ngIf="tipoDado === 'Calorias'">Calorias (kcal)</th>
+            <th *ngIf="tipoDado === 'Carboidratos'">Carboidratos (g)</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let item of relatorio">
-            <td>{{ item.dataGlicemia | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ item.horaGlicemia }}</td>
-            <td>{{ item.valorGlicemia }}</td>
+            <td>{{ item.dataRefeicao || item.dataGlicemia | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ item.horaRefeicao || item.horaGlicemia }}</td>
+            <td *ngIf="tipoDado === 'Glicemia'">{{ item.valorGlicemia }}</td>
+            <td *ngIf="tipoDado === 'Calorias'">{{ item.calorias }}</td>
+            <td *ngIf="tipoDado === 'Carboidratos'">{{ item.carboidratos }}</td>
           </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Gráfico -->
-      <div *ngIf="toggleAtivo === 'grafico'">
-        <canvas baseChart
-                [data]="chartData"
-                [options]="chartOptions"
-                chartType="line">
-        </canvas>
-      </div>
-
-
     </div>
   </div>
-
 </div>

@@ -19,7 +19,6 @@
   margin: 0 auto;
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
-
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -27,13 +26,13 @@
 .card {
   background: var(--card-color);
   border-radius: 15px;
-  padding: 0 0 20px 0; /* padding só inferior */
+  padding: 0 0 20px 0;
   flex: 0.3;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   color: var(--text-color);
 }
 
-/* Header do card azul */
+/* Header azul */
 .headerCard {
   display: flex;
   align-items: center;
@@ -65,47 +64,6 @@
   margin-bottom: 5px;
 }
 
-/* Toggle Relatório / Gráfico */
-.toggle {
-  position: relative;
-  display: flex;
-  gap: 5px;
-  background: var(--secondary-color);
-  border-radius: 8px;
-  overflow: hidden;
-  width: 200px; /* ajuste conforme necessário */
-  color: var(--text-color);
-  border: 1px solid #ccc;
-}
-
-.toggle button {
-  flex: 1;
-  padding: 8px 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  z-index: 1;
-  color: var(--text-color);
-  transition: color 0.3s;
-  font-weight: bold;
-}
-
-.toggle button.ativo {
-  color: white;
-}
-
-/* Indicador deslizante */
-.indicador {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%; /* metade do toggle */
-  background: var(--section-header-hover);
-  border-radius: 8px;
-  transition: left 0.3s ease;
-  z-index: 0;
-}
-
 /* Inputs e Select */
 input[type="text"], input[type="date"], select {
   padding: 8px 10px;
@@ -127,15 +85,14 @@ input[type="text"], input[type="date"], select {
   flex-direction: column;
 }
 
-/* Centralizar botão */
+/* Botão Buscar */
 .botaoContainer {
   display: flex;
   justify-content: center;
 }
 
-/* Botão Buscar */
 .btnBuscar {
-  background: var(--section-header) ;
+  background: var(--section-header);
   color: white;
   border: none;
   border-radius: 8px;
@@ -152,4 +109,23 @@ input[type="text"], input[type="date"], select {
 /* Card resultados maior */
 .resultadoCard {
   flex: 0.7;
+}
+
+/* Tabela */
+.tabela-relatorio {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabela-relatorio th,
+.tabela-relatorio td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela-relatorio th {
+  background-color: var(--primary-color);
+  color: white;
 }
