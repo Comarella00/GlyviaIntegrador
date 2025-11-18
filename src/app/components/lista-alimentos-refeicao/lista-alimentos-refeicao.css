@@ -1,0 +1,37 @@
+.lista-container {
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  background: #eef5ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.remover {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.total {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #ddd;
+}
+
+.vazio {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}

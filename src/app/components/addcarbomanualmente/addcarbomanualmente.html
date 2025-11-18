@@ -1,44 +1,35 @@
-<div class="cardsContainer">
-  <div class="card">
-    <div class="cardHeader">Adicionar Carboidratos Manualmente</div>
-    <div class="cardContent">
-      <p>Preencha os dados abaixo para registrar uma entrada de carboidratos.</p>
+<div class="card">
 
-      <form (ngSubmit)="adicionarRefeicao()" #carbForm="ngForm" novalidate>
-        <div>
-          <label for="descricao">Descrição:</label>
-          <input id="descricao" name="descricao" type="text" [(ngModel)]="form.descricao" required />
-        </div>
+  <h3>Adicionar alimentos manualmente</h3>
 
-        <div class="grid-2">
-          <div>
-            <label for="calorias">Calorias (kcal):</label>
-            <input id="calorias" name="calorias" type="number" min="0" [(ngModel)]="form.calorias" required />
-          </div>
+  <!-- FORMULÁRIO DE ENTRADA -->
+  <div class="form">
+    <label>Nome do alimento</label>
+    <input type="text" [(ngModel)]="nome" placeholder="Ex: Arroz cozido" />
 
-          <div>
-            <label for="carboidratos">Carboidratos (g):</label>
-            <input id="carboidratos" name="carboidratos" type="number" min="0" [(ngModel)]="form.carboidratos" required />
-          </div>
+    <label>Carboidratos (g)</label>
+    <input type="number" [(ngModel)]="carboidratos" placeholder="Ex: 28" />
 
-          <div>
-            <label for="insulina">Insulina para Repor:</label>
-            <input id="insulina" name="insulina" type="number" min="0" [(ngModel)]="form.insulina" required />
-          </div>
+    <label>Calorias (kcal)</label>
+    <input type="number" [(ngModel)]="calorias" placeholder="Ex: 130" />
 
-          <div>
-            <label for="dataRefeicao">Data:</label>
-            <input id="dataRefeicao" name="dataRefeicao" type="date" [(ngModel)]="form.dataRefeicao" required />
-          </div>
-
-          <div>
-            <label for="horaRefeicao">Hora:</label>
-            <input id="horaRefeicao" name="horaRefeicao" type="time" [(ngModel)]="form.horaRefeicao" required />
-          </div>
-        </div>
-
-        <button id="button" type="submit">Adicionar</button>
-      </form>
-    </div>
+    <button (click)="adicionar()">Adicionar alimento</button>
   </div>
+
+  <hr />
+
+  <!-- LISTA DOS ALIMENTOS -->
+  <div *ngFor="let item of alimentos; let i = index" class="item">
+    <p>{{ item.nome }} — {{ item.carboidratos }}g carbo — {{ item.calorias }} kcal</p>
+    <button class="del" (click)="remover(i)">Remover</button>
+  </div>
+
+  <hr />
+
+  <!-- TOTAL -->
+  <div class="total">
+    <strong>Total carboidratos: {{ totalCarboidratos() }} g</strong><br>
+    <strong>Total calorias: {{ totalCalorias() }} kcal</strong>
+  </div>
+
 </div>

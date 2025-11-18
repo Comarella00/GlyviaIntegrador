@@ -1,0 +1,21 @@
+<div class="lista-container">
+  <h3>Alimentos adicionados</h3>
+
+  <div *ngIf="alimentos.length === 0" class="vazio">
+    Nenhum alimento adicionado
+  </div>
+
+  <div class="item" *ngFor="let item of alimentos; let i = index">
+    <div>
+      <strong>{{ item.nome }}</strong><br>
+      {{ item.calorias }} kcal • {{ item.carboidratos }} g carbs
+    </div>
+
+    <button class="remover" (click)="removerAlimento(i)">X</button>
+  </div>
+
+  <div class="total">
+    <p><strong>Total calorias:</strong> {{ totalCalorias }} kcal</p>
+    <p><strong>Total carboidratos:</strong> {{ totalCarboidratos }} g</p>
+  </div>
+</div>

@@ -1,143 +1,111 @@
-.cardsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  gap: 20px;
+/* Mantém o header azul */
+.header h2 {
+  background-color: #4C7BB2;
+  margin: -10px -15px 20px;
+  color: white;
+  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 1.5%;
+  padding-bottom: 15px;
+  font-family: Arial, sans-serif;
 }
 
+/* Container principal dos cards */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* CARD PADRÃO (mesmo estilo da tela contar carboidratos) */
 .card {
   width: 350px;
-  background-color: var(--card-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  color: var(--text-color);
+  background: #EEF5FF;
+  border: 2px solid #4C7BB2;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-.cardContent input {
-  width: 100%;
-  padding: 6px 0;
-  background: transparent;
-  outline: none;
-  color: var(--text-color);
-  font-size: 1rem;
-  font-weight: 500;
-  border: 1px solid #ccc;
-  transition: border-bottom 0.2s ease-in-out;
-}
-
-.cardContent input::placeholder {
-  color: #999;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-.cardContent input:focus {
-  border-bottom: 1px solid var(--primary-color);
-}
-
-.inputGroup input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  background-color: transparent;
-  color: var(--text-color);
-}
-
-.cardHeader {
-  background-color: var(--primary-color);
-  color: var(--text-color);
+/* Título dentro dos cards */
+.card-title {
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 10px 15px;
-  font-size: 16px;
+  color: #1F5DA6;
   text-align: center;
 }
 
-.cardContent {
-  padding: 15px;
+/* Inputs padrão */
+.card input,
+.card select {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #4C7BB2;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
 }
 
-.containerCard {
+/* Botões padrão */
+.card button {
+  width: 90%;
+  padding: 12px;
+  background-color: #4C7BB2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background-color: #1F5DA6;
+}
+
+/* Seção da esquerda (foto e dicas) */
+.left-section {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.textContent p {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-.iconContainer img {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.iconContainer img:hover {
-  transform: scale(1.1);
-}
-
-.cardContent ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.cardContent li {
-  margin-bottom: 8px;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-@media (max-width: 600px) {
-  .containerCard {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .iconContainer {
-    margin-top: 15px;
-  }
-}
-
-form {
+/* Seção da direita (adicionar manualmente) */
+.right-section {
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* alinha os campos à esquerda */
+  align-items: center;
+}
+
+/* OU centralizado entre os cards */
+.or {
+  display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-top: 80px;
 }
 
-form div {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
+/* Responsividade */
+@media (max-width: 1000px) {
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 
-button {
-  margin: 15px auto 0 auto; /* centraliza horizontalmente */
-  padding: 10px 30px;
-  background-color: #f47920;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-  text-transform: uppercase;
-}
-
-button:hover {
-  background-color: #f36500;
-}
-
-button:disabled {
-  background-color: #b5b5b5;
-  cursor: not-allowed;
+  .or {
+    margin-top: 0;
+  }
 }

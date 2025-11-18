@@ -1,45 +1,45 @@
 import { Component } from '@angular/core';
-import { AddcarbomanualService } from '../../services/addcarbomanual.service';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-addcarbomanualmente',
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './addcarbomanualmente.html',
-  imports: [
-    FormsModule
-  ],
   styleUrls: ['./addcarbomanualmente.css']
 })
 export class Addcarbomanualmente {
-  form = {
-    descricao: '',
-    calorias: 0,
-    carboidratos: 0,
-    insulina: 0,
-    dataRefeicao: '',
-    horaRefeicao: ''
-  };
 
-  constructor(private refeicaoService: AddcarbomanualService) {}
+  nome: string = '';
+  carboidratos: number = 0;
+  calorias: number = 0;
 
-  adicionarRefeicao() {
-    // Garante formato compatível com backend
-    const dados = {
-      ...this.form,
-      // garante que a hora seja enviada no formato HH:mm:ss
-      horaRefeicao: this.form.horaRefeicao ? this.form.horaRefeicao + ':00' : null
-    };
+  alimentos: any[] = [];
 
-    this.refeicaoService.adicionarRefeicao(dados).subscribe({
-      next: (res) => {
-        console.log('Refeição adicionada:', res);
-        alert('Refeição adicionada com sucesso!');
-      },
-      error: (err) => {
-        console.error('Erro ao adicionar refeição:', err);
-        alert('Erro ao adicionar refeição. Verifique os campos.');
-      }
+  adicionar() {
+    if (!this.nome || this.carboidratos < 0 || this.calorias < 0) return;
+
+    this.alimentos.push({
+      nome: this.nome,
+      carboidratos: this.carboidratos,
+      calorias: this.calorias
     });
+
+    this.nome = '';
+    this.carboidratos = 0;
+    this.calorias = 0;
   }
 
+  remover(index: number) {
+    this.alimentos.splice(index, 1);
+  }
+
+  totalCarboidratos() {
+    return this.alimentos.reduce((sum, item) => sum + item.carboidratos, 0);
+  }
+
+  totalCalorias() {
+    return this.alimentos.reduce((sum, item) => sum + item.calorias, 0);
+  }
 }
